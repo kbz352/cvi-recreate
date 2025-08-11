@@ -1,14 +1,45 @@
-\documentclass[12pt, letterpaper]{article}
+\documentclass[10pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
-\usepackage{geometry}
-\geometry{margin=0.5in}
-\title{\large Effects of Operating Conditions on the Gas-Phase Decomposition of \\
-MTS/H$_2$ during Chemical Vapor Infiltration of SiC}
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[
+    % margin=1in
+    top=0.5in,
+    bottom=0.5in,
+    left=1in,
+    right=1in,
+    % showframe % Uncomment to show frames around the margins for debugging purposes
+]{geometry}
+\usepackage[bottom, hang]{footmisc} % Force footnotes to the bottom of the page and to the left margin
+\setlength{\footnotemargin}{6pt} % Horizontal space between the footnote marker and text
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true, % Whether to color the text of links
+	urlcolor=black, % Color for \url and \href links
+	linkcolor=black, % Color for \nameref links
+	citecolor=black, % Color of reference citations
+}
+
+ 
+\usepackage{titlesec} % Required for modifying sections
+\titleformat{\section}[block]{\normalsize\bfseries}{\thesection .}{0.5em}{}[]
+\titlespacing*{\section}{0pt}{8pt}{4pt} % Spacing around section titles, the order is: left, before and after
+
+\title{
+    \Large 
+        Effects of Operating Conditions on the Gas-Phase Decomposition of \\
+        MTS/H$_2$ during Chemical Vapor Infiltration of SiC
+    }
 \author{
-    {\small
-        R. Ranjan\textsuperscript{a,}\thanks{UTC} ,
+    {\normalsize
+        R. Ranjan\textsuperscript{a,}\thanks{\footnotesize Corresponding author. \\ 
+        \hspace*{12.5pt} \emph{Email address:} \textbf{\href{mailto:reetesh-ranjan@utc.edu}{reetesh-ranjan@utc.edu}} (R. Ranjan ) \\
+        \hspace*{13pt} Notice: This manuscript has been authored by UT-Battelle, LLC, under contract DEAC05-00OR22725 with the US Depart-ment of Energy (DOE). The US government retains and the publisher, by accepting the article for publication, acknowledges that the US government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this manuscript, or allow others to do so, for US government purposes. DOE will provide public access to these results of federally sponsored research in accordance with the DOE Public Access Plan (\bf \href{http://energy.gov/downloads/doe-public-access-plan}{http://energy.gov/downloads/doe-public-access-plan}).
+} ,
         J. Wilson\textsuperscript{a},
         M. Barisik\textsuperscript{a},
         V. Ramanuj\textsuperscript{b},
@@ -16,71 +47,52 @@ MTS/H$_2$ during Chemical Vapor Infiltration of SiC}
         }
     }
 \date{
-    \scriptsize \emph{
-        \textsuperscript{a}Department of Mechanical Engineering, The University of Tennessee Chattanooga \\
-        615 McCallie Avenue, Chattanooga, TN 37403, USA \\
-        \textsuperscript{b}Computational Sciences and Engineering Division, Oak Ridge National Laboratory \\
-        1 Bethel Valley Rd., Oak Ridge, TN 37831, USA \\
-    }
+    \footnotesize 
+        \emph{
+            \textsuperscript{a}Department of Mechanical Engineering, The University of Tennessee Chattanooga \\
+            615 McCallie Avenue, Chattanooga, TN 37403, USA \\
+            \textsuperscript{b}Computational Sciences and Engineering Division, Oak Ridge National Laboratory \\
+            1 Bethel Valley Rd., Oak Ridge, TN 37831, USA \\
+        }
     }
 
 \begin{document}
 \maketitle
-\begin{abstract}
-%\section*{Abstract}
-The quality of the s ilicon carbide (SiC) matrix comp os ite , which has excellent thermo-mechanic al prop ertie s,
-fabricated by the well-es tablished chemical vap or inltration (CVI) pro c ess, dep ends up on the gas-phase
-decomp osition of the employed precursor and the subsequent heterogeneous reactions at the dep osition
-surface. The decomp osition pro ces s is primarily aected by the op erating parameters such as temp erature,
-pressure, gradient of pressure and temp erature, and the comp osition of the incoming gas-phase reactants. In
-this study, we p erform plug 
-ow reactor (PFR) analysis to examine the eects of op erating parameters on the
-decomp osition of the mixture of methyltrichlorosilane (MTS) and hydrogen (H
-2
-), a widely used precursor
-for the manufacturing of SiC matrix comp osite using the CVI pro cess. The PFR analysis is p erformed using
+\noindent\hrulefill
+\section*{Abstract}
+The quality of the silicon carbide (SiC) matrix composite, which has excellent thermo-mechanical properties,
+fabricated by the well-established chemical vapor infiltration (CVI) process, depends upon the gas-phase
+decomposition of the employed precursor and the subsequent heterogeneous reactions at the deposition
+surface. The decomposition process is primarily affected by the operating parameters such as temperature,
+pressure, gradient of pressure and temperature, and the composition of the incoming gas-phase reactants. In
+this study, we perform plug flow reactor (PFR) analysis to examine the effects of operating parameters on the
+decomposition of the mixture of methyltrichlorosilane (MTS) and hydrogen (H2 ), a widely used precursor
+for the manufacturing of SiC matrix composite using the CVI process. The PFR analysis is performed using
 three chemical mechanisms of increasing degree of complexity, which include globally reduced (1 step and 5
-sp ecies), mo derately complex (30 steps and 20 sp ecies), and detailed (103 steps and 42 sp ecies) mechanisms.
-First, we discuss the reduction strategy to obtain the mo derately complex mechanism from the detailed
-one and assess the p e rformance of the three mechanisms by com paring PFR results at atmospheric pressure
-with reference exp erimental and numerical results. Afterward, the PFR analysis is p erformed using these
-mechanisms at conditions relevant to CVI. These include a range of temp erature (1100 K to 1600 K), pressure
-(5 Torr to 100 Torr), temp erature gradient (-190 K/m to -19 K/m), and pressure gradient (-7.7 Torr/m to
--0.97 Torr/m). The analysis of the results p ertaining to the decomp osition of MTS and pro duction of several
-intermediate reactive sp ecies shows that the decomp osition of MTS is more sensitive to temp e ra ture and
-its gradient than pressure or pressure gradient. The eects of the ratio of MTS and H
-2
-in the incoming
-mixture (0.05 to 0.2) are examined by considering isothermal and temp erature -gradie nt conditions. The
-results show enhanced decomp osition of MTS in the c ase with the presence of a temp erature gradient for
-the same mixture comp osition, and a nonlinear dep ende nc e of the de comp osition of MTS and pro duction
-of interme diate s and bypro ducts on the incoming mixture comp osition. The present study also showed that
-the mo derately com ple x chemical kinetics show go o d agreement with the detailed mechanism, whereas the
-globally reduced chemical mechanism yielded inaccurate results, thus implying that the mo derately complex
-mechanism can b e used while p erform ing detailed three-dimensional mo deling of the CVI pro cess.
-Keywords:
-Chemical vap or inltration, silicon carbide, methyltrichlorosilane, plug 
-ow reactor, chemical
-mechanisms
+species), moderately complex (30 steps and 20 species), and detailed (103 steps and 42 species) mechanisms.
+First, we discuss the reduction strategy to obtain the moderately complex mechanism from the detailed
+one and assess the performance of the three mechanisms by comparing PFR results at atmospheric pressure
+with reference experimental and numerical results. Afterward, the PFR analysis is performed using these
+mechanisms at conditions relevant to CVI. These include a range of temperature (1100 K to 1600 K), pressure
+(5 Torr to 100 Torr), temperature gradient (-190 K/m to -19 K/m), and pressure gradient (-7.7 Torr/m to
+-0.97 Torr/m). The analysis of the results pertaining to the decomposition of MTS and production of several
+intermediate reactive species shows that the decomposition of MTS is more sensitive to temperature and
+its gradient than pressure or pressure gradient. The effects of the ratio of MTS and H2 in the incoming
+mixture (0.05 to 0.2) are examined by considering isothermal and temperature-gradient conditions. The
+results show enhanced decomposition of MTS in the case with the presence of a temperature gradient for
+the same mixture composition, and a nonlinear dependence of the decomposition of MTS and production
+of intermediates and byproducts on the incoming mixture composition. The present study also showed that
+the moderately complex chemical kinetics show good agreement with the detailed mechanism, whereas the
+globally reduced chemical mechanism yielded inaccurate results, thus implying that the moderately complex
+mechanism can be used while performing detailed three-dimensional modeling of the CVI process.
+\\
+\\
+\noindent\emph{Keywords:} Chemical vapor infiltration, silicon carbide, methyltrichlorosilane, plug flow reactor, chemical mechanisms
+
+\noindent\hrulefill
 
 \section{Introduction}
-Materials that can withstand high-temp e rature environments are required in many engineering applica-
-tions such as nuclear reactors, automotive, spacecraft, aircraft comp onents, furnace linings, p ower electronics,
-
-Corresp onding author.
-Email address:
-reetesh-ranjan@utc.edu
-(R. Ranjan )
-Notice: This manuscript has b ee n authored by UT-Battelle , LLC, under contract D EAC05-00OR22725 with the US Depart-
-ment of Energy (DOE). The US government retains and the publisher, by accepting the arti cle for publication, acknowledges that
-the US governme nt retains a nonexclusive, pai d-up, irrevo cabl e, worldwide li cense to publish or repro duce the published form of
-this manuscript, or allow others to do so, for US government purp oses. DOE wi ll provide publ ic access to these results of federally
-sp onsored research in accordance with the DOE Publi c Access Pl an (
-http://energy.gov/downloads/doe- public- access- plan
-).
-1
-
-
+Materials that can withstand high-temp e rature environments are required in many engineering applications such as nuclear reactors, automotive, spacecraft, aircraft comp onents, furnace linings, p ower electronics,
 and cutting and grinding to ols. Such materials include metals and alloys (titanium alloys, tungsten, molyb-
 denum), ceramics (alumina, silicon carbide (SiC), graphite), and comp osites (ceramic matrix comp osites,
 carb on-carb on comp osites) [1-5]. SiC is one such material, which has excellent prop erties such as high
@@ -2180,8 +2192,6 @@ Engineering 28 (2020) 1733-1743.
 [62]
  Y. Yang, W.-g. Zhang, Journal of Central South University of Technology 16 (2009) 730-737.
 25
-
-\end{abstract}
 
 % Figures: Include as \includegraphics[width=\linewidth]{figureX.png} with captions
 
