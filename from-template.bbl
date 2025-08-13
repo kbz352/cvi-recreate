@@ -66,7 +66,7 @@ B.~Liu, Y.~Zhou, …, Composite Structures 307 (2023) 116610.
 Y.~Xu, L.~Cheng, L.~Zhang, …, Carbon 37 (1999) 1179--1187.
 
 \bibitem{DiCarlo2005}
-J.~DiCarlo, H.~M. Yun, G.~Morscher, R.~Bhatt, …, in: Handbook of ceramic composites, 2005, pp. 77--98.
+J.~DiCarlo, H.~M. Yun, G.~Morscher, R.~Bhatt, …, in: Handbook of ceramic composites, Springer, Boston, MA, 2005, pp. 77--98.
 
 \bibitem{Sirieix1990}
 F.~Sirieix, P.~Goursat, A.~Lecomte, A.~Dauger, …, Composites science and technology 37 (1990) 7--19.
@@ -105,10 +105,10 @@ B.~J. Oh, Y.~J. Lee, D.~J. Choi, G.~W. Hong, J.~Y. Park, W.~J. Kim, …, Journal
 T.~Noda, H.~Araki, F.~Abe, M.~Okada, …, Journal of nuclear materials 191 (1992) 539--543.
 
 \bibitem{Naslain2006}
-R.~Naslain, F.~Langlais, G.~Vignoles, R.~Pailler, …, in: Mechanical properties and performance of engineering ceramics II: ceramic engineering and science proceedings, Vol.~27, 2006, pp. 373--386.
+R.~Naslain, F.~Langlais, G.~Vignoles, R.~Pailler, The CVI-Process : State of the Art and Perspective, John Wiley \& Sons, Ltd, 2006, Ch.~37, pp. 373--386.
 
 \bibitem{Lazzeri2012}
-A.~Lazzeri, …, in: Ceramics and composites processing methods, 2012, pp. 313--349.
+A.~Lazzeri, CVI Processing of Ceramic Matrix Composites, John Wiley \& Sons, Ltd, 2012, Ch.~9, pp. 313--349.
 
 \bibitem{Streitwieser2006}
 D.~A. Streitwieser, N.~Popovska, H.~Gerhard, …, Journal of the European Ceramic Society 26 (2006) 2381--2387.
@@ -125,6 +125,9 @@ V.~Ramanuj, R.~Sankaran, B.~Jolly, A.~Schumacher, D.~Mitchell, …, Journal of t
 \bibitem{Deck2012}
 C.~Deck, H.~Khalifa, B.~Sammuli, T.~Hilsabeck, C.~Back, …, Progress in Nuclear Energy 57 (2012) 38--45.
 
+\bibitem{Dang2022}
+K.~Dang, H.~K. Chelliah, …, International Journal of Chemical Kinetics 54 (2022) 188--202.
+
 \bibitem{Mollick2017}
 P.~Mollick, R.~Venugopalan, D.~Srivastava, …, Journal of Crystal Growth 475 (2017) 97--109.
 
@@ -136,6 +139,21 @@ G.~D. Papasouliotis, S.~V. Sotirchos, …, Journal of the Electrochemical Societ
 
 \bibitem{Roman1995}
 Y.~Roman, J.~Kotte, M.~D. Croon, …, Journal of the European Ceramic Society 15 (1995) 875--886.
+
+\bibitem{Bammidipati1996}
+S.~Bammidipati, G.~D. Stewart, J.~R.~E. Jr, S.~A. Gokoglu, M.~J. Purdy, ..., AIChE Journal 42 (1996) 3123--3132.
+
+\bibitem{Norinaga2008}
+K.~Norinaga, V.~M. Janardhanan, O.~Deutschmann, Detailed chemical kinetic modeling of pyrolysis of ethylene, acetylene, and propylene at 1073–1373 k with a plug-flow reactor model, International Journal of Chemical Kinetics 40~(4) (2008) 199--208.
+
+\bibitem{Ge2007A}
+Y.~Ge, M.~S. Gordon, F.~Battaglia, R.~O. Fox, Theoretical study of the pyrolysis of methyltrichlorosilane in the gas phase. 1. thermodynamics, The Journal of Physical Chemistry A 111 (2007) 1462--1474.
+
+\bibitem{Ge2007B}
+Y.~Ge, M.~S. Gordon, F.~Battaglia, R.~O. Fox, Theoretical study of the pyrolysis of methyltrichlorosilane in the gas phase. 2. reaction paths and transition states, The Journal of Physical Chemistry A 111 (2007) 1475--1486.
+
+\bibitem{Ge2010}
+Y.~Ge, M.~S. Gordon, F.~Battaglia, R.~O. Fox, Theoretical study of the pyrolysis of methyltrichlorosilane in the gas phase. 3. reaction rate constant calculations, The Journal of Physical Chemistry A 114 (2010) 2384--2392.
 
 \bibitem{Mousavipour2004}
 S.~H. Mousavipour, V.~Saheb, S.~Ramezani, …, The Journal of Physical Chemistry A 108 (2004) 1946--1951.

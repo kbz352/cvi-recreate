@@ -107,7 +107,7 @@ SiCl4~\cite{Lazzeri2012}. Therefore, in this study, we study the decomposition c
 the production of several intermediate reactive species such as CH4 , HCl, SiCl4, SiHCl3 , etc., that in turn
 affect the deposition process at the preform surface where heterogeneous reactions occur.
 The computational study of CVI of SiC matrix composite can be carried out using techniques with
-varying levels of fidelity and computational cost, which include, computational fluid dynamics (CFD)~\cite{Streitwieser2006,Ramadan2018,Cha2022,Ramanuj2022}, direct simulation Monte Carlo (DSMC)~\cite{Deck2013,Deck2012}, or plug-flow reactor (PFR)~\cite{Dang2012}. For example, while
+varying levels of fidelity and computational cost, which include, computational fluid dynamics (CFD)~\cite{Streitwieser2006,Ramadan2018,Cha2022,Ramanuj2022}, direct simulation Monte Carlo (DSMC)~\cite{Deck2013,Deck2012}, or plug-flow reactor (PFR)~\cite{Dang2022}. For example, while
 CFD can simulate large-scale fabrication systems and account for transport and diffusion processes, it faces
 challenges in accurate modeling of the matrix infiltration process, where the transport of the reactants
 occurs through the fiber preform, leading to Knudsen numbers much larger than unity. To this end, the
@@ -128,21 +128,18 @@ reactive species such as CH4 , HCl, SiHCl3 , SiCl2 , and SiCl4 under CVI-relevan
 using PFR have primarily focused on the development and assessment of chemical kinetics, and therefore,
 the present study will complement the findings of such studies. Along with the detailed kinetics, we also
 assess the performance of two other chemical mechanisms, which can be potentially used with CFD and
-DSMC simulations. The three chemical mechanisms include detailed (103 steps and 43 species) [48–50],
+DSMC simulations. The three chemical mechanisms include detailed (103 steps and 43 species)~\cite{Ge2007A,Ge2007B,Ge2010},
 moderately complex reduced (30 steps and 20 species), and globally reduced (1 step and 5 species)~\cite{Mousavipour2004}
 mechanisms. The moderately complex mechanism is obtained using a reduction technique (discussed later)
 in the present study. To examine the decomposition of MTS in the presence of H2 , we consider different
 CVI reactor conditions. Apart from considering a range of operating temperatures (1100 K to 1600 K) and
 pressures (5 Torr to 100 Torr), we also examine the effects of a range of temperature gradients (-190 K/m
 to -19 K/m), and pressure gradients (-7.7 Torr/m to -0.97 Torr/m). Past studies have also shown that the
-decomposition of MTS is affected by the composition, i.e., molar ratio of MTS/H2 ($\beta$)~\cite{Peng2021}. Therefore, the
-effects of variation in $\beta$ (0.05 to 0.2) are also examined after identifying optimal operating temperature and pressure conditions.
-This article is arranged as follows. The details for the computational setup and the employed numerical
-methodology are presented in Section 2. In Section 3, an assessment of the PFR-based computational
-strategy is performed by comparing the results with reference data from the literature. The results of this
-study are discussed in Section 4. Finally, the key outcomes of this study are summarized in Section 5.
-\section{References}
-\label{S.7}
+decomposition of MTS is affected by the composition, i.e., molar ratio of MTS/H2 ($\beta$)~\cite{Peng2021}. Therefore, the effects of variation in $\beta$ (0.05 to 0.2) are also examined after identifying optimal operating temperature and pressure conditions. This article is arranged as follows. The details for the computational setup and the employed numerical methodology are presented in Section 2. In Section 3, an assessment of the PFR-based computational strategy is performed by comparing the results with reference data from the literature. The results of this study are discussed in Section 4. Finally, the key outcomes of this study are summarized in Section 5.
+
+
+\section*{Acknowledgements}
+This work was supported by the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences (BES), Gas Phase Chemical Physics (GPCP) through Grant \#DE-SC0024510.
 
 %% References with bibTeX database:
 \bibliographystyle{elsarticle-num}
