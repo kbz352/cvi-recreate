@@ -3,11 +3,20 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+%\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
 
 \usepackage[
     % margin=1in
-    top=0.5in,
+    top=1in,
     bottom=0.5in,
     left=1in,
     right=1in,
@@ -27,9 +36,14 @@
  
 \usepackage{titlesec} % Required for modifying sections
 \titleformat{\section}[block]{\normalsize\bfseries}{\thesection .}{0.5em}{}[]
-\titlespacing*{\section}{0pt}{8pt}{4pt} % Spacing around section titles, the order is: left, before and after
+\titlespacing*{\section}{0pt}{0.25in}{0.125in} % Spacing around section titles, the order is: left, before and after
+% \titlespacing*{\maketitle}{2pt}{8pt}{4pt}
+% \renewcommand{\familydefault}{\rmdefault} % no effect
+% \the\fontdimen2\font
+% \fontdimen2\font=3.4pt
 
 \title{
+    \vspace{-40.5px}
     \Large 
         Effects of Operating Conditions on the Gas-Phase Decomposition of \\
         MTS/H$_2$ during Chemical Vapor Infiltration of SiC
@@ -58,7 +72,8 @@
 
 \begin{document}
 \maketitle
-\noindent\hrulefill
+\noindent\hrulefill%
+\vspace{-0.125in}
 \section*{Abstract}
 The quality of the silicon carbide (SiC) matrix composite, which has excellent thermo-mechanical properties,
 fabricated by the well-established chemical vapor infiltration (CVI) process, depends upon the gas-phase
@@ -85,172 +100,109 @@ of intermediates and byproducts on the incoming mixture composition. The present
 the moderately complex chemical kinetics show good agreement with the detailed mechanism, whereas the
 globally reduced chemical mechanism yielded inaccurate results, thus implying that the moderately complex
 mechanism can be used while performing detailed three-dimensional modeling of the CVI process.
+\vspace{6pt}
 \\
-\\
-\noindent\emph{Keywords:} Chemical vapor infiltration, silicon carbide, methyltrichlorosilane, plug flow reactor, chemical mechanisms
+\emph{Keywords:} Chemical vapor infiltration, silicon carbide, methyltrichlorosilane, plug flow reactor, chemical mechanisms
 
 \noindent\hrulefill
 
 \section{Introduction}
-Materials that can withstand high-temp e rature environments are required in many engineering applications such as nuclear reactors, automotive, spacecraft, aircraft comp onents, furnace linings, p ower electronics,
-and cutting and grinding to ols. Such materials include metals and alloys (titanium alloys, tungsten, molyb-
-denum), ceramics (alumina, silicon carbide (SiC), graphite), and comp osites (ceramic matrix comp osites,
-carb on-carb on comp osites) [1-5]. SiC is one such material, which has excellent prop erties such as high
-strength, high thermal c onductivity, low thermal expansion, chemical inertness, and go o d thermal sho ck
-strength [6-9]. However, it also tends to have a low toughness [10-12], which has motivated interest in high
-purity and high quality SiC b er-reinforced matrix comp osites [13-19]. In such comp osites, a SiC matrix is
-dep osited within a b er preform comp osed of high-purity, ne ar-stoichiometric SiC b er. Such an approach
-leads to a b etter fracture toughness prop erty while still having a similar p e rformance under high thermal-
-loading conditions. The dep osition of the SiC matrix comp osites dep ends up on the op e ra ting conditions,
-which aect the gas-phase decomp osition and the subsequent heterogeneous surface reactions on the b er
-preform. The present study examines the eects of op erating conditions on the gas-phase decomp osition of
-the precursor and the pro duction of intermediate reactive sp ec ie s during SiC matrix dep osition.
-SiC matrix comp osites can b e fabricated using approaches such as melt inltration [20, 21], p olymer
-inltration and pyrolysis [22, 23], and chemica l vap or inltration (CVI) [24-26]. Past studies have shown
-that CVI is a reliable approach to obtain a very high-purity SiC matrix comp osite [25, 27]. During the CVI
-pro cess, a SiC precursor is intro duced into a chamb er in the gas phase, which diuses into the b er preform
-and chemically reacts, forming a SiC matrix within the sample. T he re are two ma jor challenges asso ciated
-with the C VI pro cess, which aect the overall quality of the resultant matrix comp osite. The rst challenge
-is asso ciated with the pro ce ssing time. While CVI pro duces a very high-purity matrix, as the dep osition
-pro cess is dep endent on the diusion of reactants into the b er preform, ideally, a s low reaction rate is
-desirable to ensure uniform transp ort of reactants throughout the preform. However, with a slower reaction
-rate, the pro cessing time gets longer, which can aect the quality of the resulting comp osite. For example,
-high p orosity can b e observed, and lling of inter-tow sharp and large p ores can b e a challenge while keeping
-the pro cessing times low [28]. Therefore, mo dications have b een considered to the conventional CV I pro cess
-[25, 29]. These include thermal-gradient CVI [30], pressure-gradient CVI (forced 
-ow C VI) [26], pressure-
-pulsed CVI [31], and whisker-growing assisted CVI [32]. The second challenge is related to the dep endence
-of the quality of the SiC dep osition on the gas-phase decomp osition of the precursor that is used during the
-pro cess. Note that the precursor decomp osition and pro duction of the reactive intermediates directly aect
-the heterogeneous s urface reactions and can also aect the overall pro cess ing time. This particular challenge
-can b e addressed by studying the eects of op erating c onditions on the decomp osition of the precursor used
-for the CVI of SiC matrix comp osite, which is the ma jor fo cus of this study.
-Some of the commonly used precursors for the fabrication of SiC through the CVI pro cess include
-methyltrichlorosilane (CH
-3
-SiCl
-3
-), hereafter referred to as MTS, silane (SiH
-4
-) along with hydro carb ons such
-as methane (CH
-4
-), dichloromethylsilane (CH
-3
-SiHCl
-2
-), and hexamethyldisilane ((CH
-3
-)
-6
-Si
-2
-) [33-35]. Out
-of these, MTS is w idely used as it yields a p erfect stoichiome try (1:1 Si:C), leading to high-purity SiC
-with minimal free carb on or silicon [25]. In addition, its decomp osition charac teristics can b e controlled by
-varying op erating te mp erature (800 to 1000
-o
-C) and pressure (5 to 100 Torr) conditions, and the ratio of
-MTS to hydrogen (H
-2
-) in the incoming mixture. Note that MTS is used as a precursor along with H
-2
-as
-the carrier gas, which in turn can suppre ss free carb on formation and reduce volatile intermediates such as
-SiCl
-4
-[35]. Therefore, in this study, we s tudy the decomp osition characteristics of MTS, which c an lead to
-the pro duction of several intermediate reactive sp ecies such as CH
-4
-, HCl, SiCl
-4
-, SiHCl
-3
-, etc., that in turn
-aect the dep osition pro cess at the preform surface where heterogeneous reactions o ccur.
-The computational study of CVI of SiC matrix comp osite can b e carried out using techniques with
-varying levels of delity and computational cost, which include, computational 
-uid dynamics (CFD) [36-
-39], direct simulation Monte Carlo (DSMC) [26, 40], or plug-
-ow reactor (PFR ) [41]. For example, while
-CFD can simulate large-scale fabrication systems and account for trans p ort and diusion pro c esses, it faces
-challenges in accurate mo deling of the m atrix inltration pro ce ss, where the transp ort of the re actants
-o ccurs through the b er preform, leading to Knudsen numb ers much larger than unity. To this end, the
-DSMC technique can b e employed, although it is computationally exp ensive for the simulation of large-scale
-fabrication systems. While us ing either of the se techniques, accurate mo deling of che mical kinetics is pivotal
-to the accuracy of the prediction of the gas -phas e decomp osition and subsequent dep osition through the
-heterogeneous surface reactions on the b er preform. However, due to computational complexities asso ciated
-with detailed chemical kinetics, often simplied chemical mechanisms are employed while us ing CFD and
-DSMC techniques [40, 42, 43], which tend to yield inaccurate results. Therefore, there is a nee d to have
-reliable yet aordable chemical mechanisms that can accurately predict the gas-phase decomp osition and
-subsequent heterogeneous reactions during CVI of SiC. In this study, we employ a plug-
-ow reactor (PFR)
-2
+Materials that can withstand high-temperature environments are required in many engineering applica-
+tions such as nuclear reactors, automotive, spacecraft, aircraft components, furnace linings, power electronics,
+\pagebreak
 
+\noindent and cutting and grinding tools. Such materials include metals and alloys (titanium alloys, tungsten, molyb-
+denum), ceramics (alumina, silicon carbide (SiC), graphite), and composites (ceramic matrix composites,
+carbon-carbon composites) [1–5]. SiC is one such material, which has excellent properties such as high
+strength, high thermal conductivity, low thermal expansion, chemical inertness, and good thermal shock
+strength [6–9]. However, it also tends to have a low toughness [10–12], which has motivated interest in high
+purity and high quality SiC fiber-reinforced matrix composites [13–19]. In such composites, a SiC matrix is
+deposited within a fiber preform composed of high-purity, near-stoichiometric SiC fiber. Such an approach
+leads to a better fracture toughness property while still having a similar performance under high thermal-
+loading conditions. The deposition of the SiC matrix composites depends upon the operating conditions,
+which affect the gas-phase decomposition and the subsequent heterogeneous surface reactions on the fiber
+preform. The present study examines the effects of operating conditions on the gas-phase decomposition of
+the precursor and the production of intermediate reactive species during SiC matrix deposition.
 
-Figure 1: Schematic of a plug 
-ow reactor-based representation of the hot-wall CVI reactor conguration. Here,
-M
-i
-denotes the
-i
-th
-plug along the axial (
-x
-) direction, and 
-x
-, 
-V
-, and
-R
-denote the axial length, volume, and radius of the plug, resp ectively.
-as the computational technique, which can effciently account for detailed chemical kinetics [44-47] to study
-the decomp os ition of MTS under dierent op erating conditions. In a PFR, a steady 
-ow eld within an axial
-duct is mo deled, where the 
-ow in the transverse direction is considered to b e completely homogeneous.
-The key ob je ctive of this study is to rst establish a PFR setup, and then to use the setup to examine
-the eects of op erating conditions on the gas-phase decomp osition of MT S and pro duction of intermediate
-reactive sp e cies such as CH
-4
-, HCl, SiHCl
-3
-, SiCl
-2
-, and SiCl
-4
-under CVI-relevant c onditions. Past studies
-using PFR have primarily fo cused on the development and assessment of chemical kinetics, and therefore,
-the present study will complement the ndings of such studies. Along with the detailed kinetics , we also
-assess the p erformance of two other chemical mechanisms, which can b e p otentially used with CFD and
-DSMC simulations. The three chemical mechanisms include detailed (103 steps and 43 sp ec ie s) [48-50],
-mo derately complex reduced (30 ste ps and 20 sp ecies), and globally reduced (1 step and 5 sp ecies) [51]
-mechanisms. The mo derately complex mechanism is obtained us ing a reduction technique (discuss ed later)
-in the present study. To examine the decomp osition of MTS in the presence of H
-2
-, we consider dierent
-CVI reactor conditions. Apart from considering a range of op erating te mp eratures (1100 K to 1600 K) and
-pressures (5 Torr to 100 Torr), we also examine the eects of a range of temp erature gradients (-190 K/m
+SiC matrix composites can be fabricated using approaches such as melt infiltration [20, 21], polymer
+infiltration and pyrolysis [22, 23], and chemical vapor infiltration (CVI) [24–26]. Past studies have shown
+that CVI is a reliable approach to obtain a very high-purity SiC matrix composite [25, 27]. During the CVI
+process, a SiC precursor is introduced into a chamber in the gas phase, which diffuses into the fiber preform
+and chemically reacts, forming a SiC matrix within the sample. There are two major challenges associated
+with the CVI process, which affect the overall quality of the resultant matrix composite. The first challenge
+is associated with the processing time. While CVI produces a very high-purity matrix, as the deposition
+process is dependent on the diffusion of reactants into the fiber preform, ideally, a slow reaction rate is
+desirable to ensure uniform transport of reactants throughout the preform. However, with a slower reaction
+rate, the processing time gets longer, which can affect the quality of the resulting composite. For example,
+high porosity can be observed, and filling of inter-tow sharp and large pores can be a challenge while keeping
+the processing times low [28]. Therefore, modifications have been considered to the conventional CVI process
+[25, 29]. These include thermal-gradient CVI [30], pressure-gradient CVI (forced flow CVI) [26], pressure-
+pulsed CVI [31], and whisker-growing assisted CVI [32]. The second challenge is related to the dependence
+of the quality of the SiC deposition on the gas-phase decomposition of the precursor that is used during the
+process. Note that the precursor decomposition and production of the reactive intermediates directly affect
+the heterogeneous surface reactions and can also affect the overall processing time. This particular challenge
+can be addressed by studying the effects of operating conditions on the decomposition of the precursor used
+for the CVI of SiC matrix composite, which is the major focus of this study.
+
+Some of the commonly used precursors for the fabrication of SiC through the CVI process include
+methyltrichlorosilane (CH3SiCl3 ), hereafter referred to as MTS, silane (SiH4 ) along with hydrocarbons such
+as methane (CH4 ), dichloromethylsilane (CH3 SiHCl2 ), and hexamethyldisilane ((CH3 )6 Si2) [33–35]. Out
+of these, MTS is widely used as it yields a perfect stoichiometry (1:1 Si:C), leading to high-purity SiC
+with minimal free carbon or silicon [25]. In addition, its decomposition characteristics can be controlled by
+varying operating temperature (800 to 1000 o C) and pressure (5 to 100 Torr) conditions, and the ratio of
+MTS to hydrogen (H2 ) in the incoming mixture. Note that MTS is used as a precursor along with H2 as
+the carrier gas, which in turn can suppress free carbon formation and reduce volatile intermediates such as
+SiCl4 [35]. Therefore, in this study, we study the decomposition characteristics of MTS, which can lead to
+the production of several intermediate reactive species such as CH4 , HCl, SiCl4, SiHCl3 , etc., that in turn
+affect the deposition process at the preform surface where heterogeneous reactions occur.
+
+The computational study of CVI of SiC matrix composite can be carried out using techniques with
+varying levels of fidelity and computational cost, which include, computational fluid dynamics (CFD) [36–
+39], direct simulation Monte Carlo (DSMC) [26, 40], or plug-flow reactor (PFR) [41]. For example, while
+CFD can simulate large-scale fabrication systems and account for transport and diffusion processes, it faces
+challenges in accurate modeling of the matrix infiltration process, where the transport of the reactants
+occurs through the fiber preform, leading to Knudsen numbers much larger than unity. To this end, the
+DSMC technique can be employed, although it is computationally expensive for the simulation of large-scale
+fabrication systems. While using either of these techniques, accurate modeling of chemical kinetics is pivotal
+to the accuracy of the prediction of the gas-phase decomposition and subsequent deposition through the
+heterogeneous surface reactions on the fiber preform. However, due to computational complexities associated
+with detailed chemical kinetics, often simplified chemical mechanisms are employed while using CFD and
+DSMC techniques [40, 42, 43], which tend to yield inaccurate results. Therefore, there is a need to have
+reliable yet affordable chemical mechanisms that can accurately predict the gas-phase decomposition and
+subsequent heterogeneous reactions during CVI of SiC. In this study, we employ a plug-flow reactor (PFR)
+% insert figure 1
+\\
+as the computational technique, which can efficiently account for detailed chemical kinetics [44–47] to study
+the decomposition of MTS under different operating conditions. In a PFR, a steady flow field within an axial
+duct is modeled, where the flow in the transverse direction is considered to be completely homogeneous.
+
+The key objective of this study is to first establish a PFR setup, and then to use the setup to examine
+the effects of operating conditions on the gas-phase decomposition of MTS and production of intermediate
+reactive species such as CH4 , HCl, SiHCl3 , SiCl2 , and SiCl4 under CVI-relevant conditions. Past studies
+using PFR have primarily focused on the development and assessment of chemical kinetics, and therefore,
+the present study will complement the findings of such studies. Along with the detailed kinetics, we also
+assess the performance of two other chemical mechanisms, which can be potentially used with CFD and
+DSMC simulations. The three chemical mechanisms include detailed (103 steps and 43 species) [48–50],
+moderately complex reduced (30 steps and 20 species), and globally reduced (1 step and 5 species) [51]
+mechanisms. The moderately complex mechanism is obtained using a reduction technique (discussed later)
+in the present study. To examine the decomposition of MTS in the presence of H2 , we consider different
+CVI reactor conditions. Apart from considering a range of operating temperatures (1100 K to 1600 K) and
+pressures (5 Torr to 100 Torr), we also examine the effects of a range of temperature gradients (-190 K/m
 to -19 K/m), and pressure gradients (-7.7 Torr/m to -0.97 Torr/m). Past studies have also shown that the
-decomp osition of MTS is aected by the comp osition, i.e., molar ratio of MTS/H
-2
-(
-
-) [52]. Therefore, the
-eects of variation in
-
-(0.05 to 0.2) are also examined after identifying optimal op erating temp erature and
+decomposition of MTS is affected by the composition, i.e., molar ratio of MTS/H2 ($\beta$) [52]. Therefore, the
+effects of variation in $\beta$ (0.05 to 0.2) are also examined after identifying optimal operating temperature and
 pressure conditions.
-This article is arranged as follows . The details for the computational setup and the employed numerical
-metho dology are presented in Section 2. In Section 3, an assessment of the PFR-based computational
-strategy is p erformed by comparing the results with reference data from the literature. The results of this
+
+This article is arranged as follows. The details for the computational setup and the employed numerical
+methodology are presented in Section 2. In Section 3, an assessment of the PFR-based computational
+strategy is performed by comparing the results with reference data from the literature. The results of this
 study are discussed in Section 4. Finally, the key outcomes of this study are summarized in Section 5.
-2. Setup and Approach
-In this section, we rs t describ e the details of the CVI reactor c onguration. Afterward, the computational
+\section{Setup and Approach}
+In this section, we rs t describ e the details of the CVI reactor c onguration. Afterward, the computational
 metho d is des crib ed. Finally, the details of the chemical m echanisms used in this study are presented.
 2.1. Details of the Setup
 We consider a cylindrical hot-wall 
-ow CVI reactor conguration. A schematic of this reactor is shown in
+ow CVI reactor conguration. A schematic of this reactor is shown in
 Fig. 1. The dimensions of the reactor follow a past study [41]. The axial extent of the cylindrical reactor is
 L
 = 0
@@ -271,8 +223,8 @@ T
 2
 . The ratio of molar comp os ition of MTS and H
 2
-is sp ecied to b e
-
+is sp ecied to b e
+
 , which is varied in this s tudy from 0.05 to 0.2.
 3
 
@@ -375,7 +327,7 @@ k
 Here,
 c
 p
-denotes the sp ecic heat of the mixture at constant pressure,
+denotes the sp ecic heat of the mixture at constant pressure,
 h
 k
 and \_
@@ -399,7 +351,7 @@ u
 T
 
 for relating the thermo dynamic
-prop erties, and nite-rate chemical kinetics for determining \_
+prop erties, and nite-rate chemical kinetics for determining \_
 !
 k
 . Here,
@@ -412,17 +364,17 @@ ular weight and universal gas constant, res p ectively. The system of governing 
 sp ecifying the inlet conditions. Note that, as the diusion pro cess is neglected, downstream parts of the
 reactor have no in
 uence on upstream parts. Therefore, PFR can b e integrated as initial value problems,
-starting from the comp osition at the inle t and moving towards the outlet by considering nite size volume
+starting from the comp osition at the inle t and moving towards the outlet by considering nite size volume
 (
 V
 ), referred to as plugs, as shown in Fig. 1.
 In the present s tudy, the reactor length that is b eing considered here has a residence time of ab out 30
-ms, which implies a negligible radial diusion/stratication [41]. Therefore, the PFR mo del utilizes a longer
+ms, which implies a negligible radial diusion/stratication [41]. Therefore, the PFR mo del utilizes a longer
 residence time of 500 ms than this critical limit. The PFR simulations are carried out using the Cantera
 software [53], which is a well-established op en-source software for the simulation of proble ms p ertaining to
 thermo dynamics, chemical kinetics, and transp ort pro cesses.
 2.3. Chemical Kinetics Mechanisms
-We consider three chemical mechanisms with dierent levels of delity. These include a detailed 42
+We consider three chemical mechanisms with dierent levels of delity. These include a detailed 42
 sp ecies and 103 ste ps mechanism [48-50], a mo derately complex 20 sp ecies and 30 steps mechanism, and a
 globally reduced 5 sp ecies and 1 step mechanism [51]. Hereafter, these mechanisms are referred to as M1, M2,
 and M3, resp ectively. Here, the mechanism M1 se rves as a reference for comparing the p erformance of the
@@ -433,7 +385,7 @@ can p otentially capture the ee cts of kinetics while still b eing cost-eective 
 While M1 and M3 mechanisms are obtaine d from past studies, M2 is obtained by p erforming a reduction of
 the M1 mechanism using the Cantera software [53]. The reduction strategy simulate s an adiabatic constant
 pressure rea ctor over a range of pressure and temp erature conditions relevant to this study, tracks the
-maximum reaction rates for each re action, and identies the imp ortant reactions based on the relative net
+maximum reaction rates for each re action, and identies the imp ortant reactions based on the relative net
 reaction rate. This is followed by creating a series of reduced chemical mechanisms, including only the top
 4
 
@@ -617,17 +569,17 @@ reactions and the as so ciated sp ecies, and p erforming the simulations again w
 whether the reduced mechanisms with a certain numb er of sp ecies are able to adequately simulate the reac tor.
 The comparison of results from dierent reduced chemical mechanisms with the detailed M1 mechanism and
 dominant reac tions obtained for ma jor sp ecies using sensitivity analysis is discussed in Sec. 3.1.
-3. Assessment of Computational Strategy
-In this section, we rst discuss the results from the reduction of the M1 mechanism yielding the M2
+\section{Assessment of Computational Strategy}
+In this section, we rst discuss the results from the reduction of the M1 mechanism yielding the M2
 mechanism. Afterward, we compare the computational cost of the three mechanisms. Finally, we p erform
-a verication and validation study using these mechanisms to establish the PFR-based strategy for further
+a verication and validation study using these mechanisms to establish the PFR-based strategy for further
 studies.
 3.1. Reduction of Chemical Mechanism
 To p erform the reduction of the detailed mechanism M1, we simulate adiabatic constant-pressure reactors
 for 200 ms. We examine the accuracy of reduced mechanisms with increasing de gre e of complexity for a
 range of reactor temp eratures (1100 K to 1600 K) and pressures (5 Torr to 100 Torr). The numb er of
 chemical reactions to b e used in the reduced mechanism was varied from 10 to 50. As discussed in Sec. 2.3,
-the reduction strategy identie s the most active reac tions . It re sulted in mechanisms with the numb er of
+the reduction strategy identie s the most active reac tions . It re sulted in mechanisms with the numb er of
 sp ecies varying from 12-28, with 10-50 reactions.
 Figures 2 and 3 show the variation of mole fraction of MTS (
 X
@@ -832,7 +784,7 @@ primarily resp onsible for the formation of CH
 which is crucial for the removal of Cl and the promotion of SiC growth through heterogeneous reactions [56].
 For CH
 4
-, R1 and R3 are the rst two dominant reactions (see Fig. 4(c) and (d)), which are found in
+, R1 and R3 are the rst two dominant reactions (see Fig. 4(c) and (d)), which are found in
 b oth M1 and M2 mechanisms. However, the third dominant reaction is dierent for CH
 4
 with M1 and M2
@@ -872,10 +824,10 @@ H
 in the M2 mechanism (see Table 1). Although the third
 dominant reaction for CH
 4
-diers for the M1 and M2 mechanisms, the s ensitivity of the rst two dominant
+diers for the M1 and M2 mechanisms, the s ensitivity of the rst two dominant
 reactions is much higher compared to the third reaction.
 An imp ortant bypro duct during the de comp osition of MTS is HCl. With b oth M1 and M2 mechanisms,
-similar to MTS, R1 and R2 are the rs t two dominant reactions (s ee Fig. 4(e) and (f )), whereas the third
+similar to MTS, R1 and R2 are the rs t two dominant reactions (s ee Fig. 4(e) and (f )), whereas the third
 dominant reac tion is
 SiCl
 3
@@ -915,7 +867,7 @@ As exp ected, the computational cost of the M2 and M3 mechanis ms is lower than 
 mechanism. The cost of M2 decreases primarily due to a decrease in the numb er of sp ecies compared to M1,
 from 42 to 20, with a much less impact of a decrease in the numb er of reactions. Note that mechanisms such
 as M2 can b e used for CFD simulations, as mechanisms with 15-20 chemical sp ecies tend to b e manageable
-while employing nite-rate kinetics. However, it should b e noted that the cost of a CFD simulation, apart
+while employing nite-rate kinetics. However, it should b e noted that the cost of a CFD simulation, apart
 from including the kinetics cost, also includes the cost of computation of convective and diusive 
 uxes,
 which can b e comparable to or larger than the cost of kinetics compared to a PFR simulation. The cost
@@ -931,8 +883,8 @@ Figure 5: Vari ati on of mole fraction of MTS (a) and CH
 4
 (b) with resp ect to temp erature. Exp erimental data and `Ref` data
 corresp onds to exp erimental and computational study using detailed mechanism [41].
-3.3. Verication and Validation
-We p erform the verication and validation of the PFR-based strategy by simulating MTS decomp osition
+3.3. Verication and Validation
+We p erform the verication and validation of the PFR-based strategy by simulating MTS decomp osition
 in the pre sence of H
 2
 at an op erating pressure of 1 atm (760 Torr), inlet c omp osition ratio of 0.1, and over a
@@ -942,7 +894,7 @@ variation of the mole fraction of MTS and CH
 with resp ec t to temp erature. For comparison, we also include
 exp erimental and computational results obtained using a detailed chemical mechanis m from a past study
 [41]. Note that the detailed mechanism us ed in the reference s tudy was devised to match the exp erimental
-data. Furthermore, the op erating pressure of the present conguration is much higher than that of a typical
+data. Furthermore, the op erating pressure of the present conguration is much higher than that of a typical
 CVI, which is usually op erated at lower pressures.
 Both M1 and M2 mechanisms yield the same results for MTS, which starts to decomp ose gradually
 from 1100 K to 1200 K, and then rapidly leads to a ne arly complete decomp osition by 1350 K. The value s
@@ -993,7 +945,7 @@ with resp ect to temp erature, although the rates of de comp osition of MTS and 
 CH
 4
 tend to match. In this study, we have not made any attempts to mo dify the baseline M1 mechanism, as
-the e xp erimental data is only available at 760 Torr, where as this study examines CVI reactor congurations
+the e xp erimental data is only available at 760 Torr, where as this study examines CVI reactor congurations
 at lower pressures. Therefore, the results from the M1 mechanism are considered as a reference in the rest
 10
 
@@ -1011,8 +963,8 @@ pressure gradients at dierent values of pressures and tem p eratures. Finally, t
 of MTS to H
 2
 (
-
-) at the inlet of the CVI reactor are examined under two reactor congurations, which
+
+) at the inlet of the CVI reactor are examined under two reactor congurations, which
 include isothermal and temp erature-gradient conditions across the reactor for optimal op erating pressure
 and temp erature conditions.
 In a CVI relevant conditions, the decomp osition of MTS/H
@@ -1045,7 +997,7 @@ decomp ose, providing the Si ne eded for the SiC dep osition. It can also react 
 can aect the dep osition rate. However, if SiHCl
 3
 do es not react further, it can carry silicon away from the
-dep osition zone, which can lower the SiC yield or lead to a Si-decient or C- rich matrix. SiCl
+dep osition zone, which can lower the SiC yield or lead to a Si-decient or C- rich matrix. SiCl
 4
 is also a
 dominant and stable sp ecies, which is generally inactive toward SiC formation under typical CVI conditions,
@@ -1073,7 +1025,7 @@ SiC(s) + 2HCl(g)
 :
 Due to its high reactivity, SiCl
 2
-promotes rapid SiC growth near the inltration front, enhancing dep osition
+promotes rapid SiC growth near the inltration front, enhancing dep osition
 effciency. However, excessive SiCl
 2
 may lead to non-uniform dep osition or p ore closure. Finally, HCl is
@@ -1115,7 +1067,7 @@ T
 K and the rate of decomp osition increases with an inc re ase in
 T
 . Both M1 and M2 m echanisms yield
-identical results, however, the globally reduced M3 mechanis m leads to a signicant over-prediction of MTS.
+identical results, however, the globally reduced M3 mechanis m leads to a signicant over-prediction of MTS.
 11
 
 
@@ -1251,11 +1203,11 @@ the M3 mechanism, the p eak value of
 X
 SiHCl
 3
-is signicantly over-predicted compared to the other two
+is signicantly over-predicted compared to the other two
 mechanisms. As discussed b efore, SiHCl
 3
 is a parasitic bypro duc t, which carries Si away from the dep os ition
-zone, which can lower the SiC yield or lead to a Si-decient or C- rich matrix. Therefore, using the M3
+zone, which can lower the SiC yield or lead to a Si-decient or C- rich matrix. Therefore, using the M3
 mechanism can lead to inaccurate prediction of SiC dep osition.
 Both HCl and SiCl
 2
@@ -1305,7 +1257,7 @@ P
 by varying it from 5 to 100 Torr at three dierent values of
 T
 . Based on
-the res ults discussed in Sec. 4.1, we observe that the ma jor sp ecies showed signicant variation for
+the res ults discussed in Sec. 4.1, we observe that the ma jor sp ecies showed signicant variation for
 T
 within
 the range of 1150-1350 K, therefore, we consider three values of
@@ -1445,7 +1397,7 @@ SiCl
 4
 + H (Equilibrium limited step)
 :
-The M3 mechanism shows signicant overprediction of SiHCl
+The M3 mechanism shows signicant overprediction of SiHCl
 3
 , which again underscores its inaccuracy.
 Unlike SiHCl
@@ -1484,7 +1436,7 @@ which quickly reacts with H
 or Cl, leaving its steady-state concentration kinetically controlled, not equilibrium-
 limited, and thus the observed pressure insensitivity. Past exp erimental studies have also shown that SiCl
 2
-concentrations remain constant across 1-100 Torr for a xed ratio of MTS/H
+concentrations remain constant across 1-100 Torr for a xed ratio of MTS/H
 2
 . It has b een obse rved that
 only for
@@ -1577,7 +1529,7 @@ Figure 8: Variation of mole fraction of MTS (a, c, e) and CH
 4
 (b, d, f ) with resp ect to the temp erature gradient at three values
 of op erating pressure (5 Torr, 52.5 Torr, and 100 Torr) at inlet temp erature of 1150 K (a, b), 1250 K (c, d), and 1350 K (e,
-f ). The results from the M3 mechanism are not visible in these gures as they are signicantly over-predicte d for MTS and
+f ). The results from the M3 mechanism are not visible in these gures as they are signicantly over-predicte d for MTS and
 under-predicted for CH
 4
 .
@@ -1623,7 +1575,7 @@ exp ected as evident from Fig. 8. However, the dep endence of MTS and CH
 mole fractions on 
 T
 changes
-signicantly as the inlet temp erature is changed. At 1150 K, the decomp osition of MTS increase s with
+signicantly as the inlet temp erature is changed. At 1150 K, the decomp osition of MTS increase s with
 T
 gradually, while at 1250 K, a linear dep endence on
 T
@@ -1652,7 +1604,7 @@ the M2 mechanism showed overprediction compared to the M1 mechanism, which can b
 absence of s ome of the reaction pathways, where CH
 4
 is involved, and the absence of s ome of the chemic al
-sp ecies in this mechanism. Even at 1350 K, the results from M3 are signic antly inaccurate for b oth MTS
+sp ecies in this mechanism. Even at 1350 K, the results from M3 are signic antly inaccurate for b oth MTS
 and CH
 4
 compared to the M1 mechanism.
@@ -1762,7 +1714,7 @@ T
 = 1350 K)
 Figure 9: Variation of mole fraction of SiHCl3 (a, c, e) and HCl (b, d, f ) with resp ect to the temp erature gradient at three values
 of op erating pressure (5 Torr, 52.5 Torr, and 100 Torr) at inlet temp erature of 1150 K (a, b), 1250 K (c, d), and 1350 K (e, f ).
-Some of the results from the M3 mechanism are not visible in these gure s as they are signicantly over- or under-predicted
+Some of the results from the M3 mechanism are not visible in these gure s as they are signicantly over- or under-predicted
 compared to the M1 and M2 mechanisms.
 18
 
@@ -1841,7 +1793,7 @@ the role of kinetics, which is more sensitive at higher te mp eratures and avail
 for pro duction/consumption of bypro ducts and other reactive intermediates in the M1 mechanism.
 4.5. Eects of Co mpositional Variation
 Now, we examine the eects of comp ositional variation (
-
+
 =
 X
 MTS
@@ -1849,7 +1801,7 @@ MTS
 H
 2
 ) at the inlet by considering
-
+
 2
 (0
 :
@@ -1857,44 +1809,44 @@ H
 ;
 0
 :
-2). We consider two typ e s of reactor congurations. In the rst case, op erating temp erature and
-pressure are sp ecied to b e 1250 K and 5 Torr, resp ectively. In the second case, the pres sure is sp ecied to b e
+2). We consider two typ e s of reactor congurations. In the rst case, op erating temp erature and
+pressure are sp ecied to b e 1250 K and 5 Torr, resp ectively. In the second case, the pres sure is sp ecied to b e
 5 Torr, however, we c onside r a te mp erature gradient of 
 T
 = 60 K across the length of the reactor, with the
-inlet temp erature sp ecied to b e 1250 K. These conditions are chosen based on the results discussed b efore,
+inlet temp erature sp ecied to b e 1250 K. These conditions are chosen based on the results discussed b efore,
 where we observed minor sensitivity to pressure and ma jor sensitivity to temp erature and temp e rature
 gradient. Figure 11 shows the results from the two typ es of cases. As the mechanism M3 yields inaccurate
 results, we only consider M1 and M2 me chanisms to e xamine the eects of
-
+
 .
 In the case with te mp erature gradient, the decomp osition of MTS is enhanced, which is apparent from a
-signicant decrease in the value of
+signicant decrease in the value of
 X
 MTS
 for all values of
-
+
 . The decrease is much higher for larger values of
-
+
 .
 Such b ehavior is due to the combined eect of higher temp erature and the presence of a temp erature gradient.
 The enhancement in MTS decomp osition in the cases with higher tem p erature gradients is accompanied by
 an increase in the pro duction of the intermediate reactive sp ecies. Furthermore, a higher level of pro duction
 of these sp ecies o ccurs for larger values of
-
+
 . While the variation of mole fraction of sp ecies such as SiHCl
 3
 ,
 HCl, and SiCl
 2
 with
-
+
 is quasi-linear, the variation of
 X
 SiCl
 4
 tends b e nonlinear with resp ect to
-
+
 in
 b oth isothermal and temp erature gradient cases. Furthermore, the mole fraction of all sp ecies from the
 M2 m echanism matches with the values obtained using the M1 mechanism, which again demonstrates the
@@ -1918,7 +1870,7 @@ as the carrier gas in a hot-wall cylindrical reactor at C VI-relevant conditions
 The decomp osition of MTS leads to the pro duction of seve ral bypro ducts and intermediate reactive
 sp ecies, w hich, if not predicted well, c an lead to inaccurate results for the s ubse que nt heterogeneous re actions
 and the asso ciated SiC dep osition. Therefore, we considered three chemical mechanisms with varying degree
-of delity, namely, a detailed mechanisms (M1: 103 steps and 42 sp ecies), a mo de rate ly complex reduced
+of delity, namely, a detailed mechanisms (M1: 103 steps and 42 sp ecies), a mo de rate ly complex reduced
 20
 
 
@@ -1941,7 +1893,7 @@ Figure 11: Variation of mole fraction of MTS (a), CH
 (d), HCl (e), and SiCl
 2
 (f ) with resp ect to
-
+
 for
 isothermal and temp erature gradient conditions at inlet temp erature of 1250 K and pressure of 5 Torr.
 21
@@ -1970,7 +1922,7 @@ as SiHCl
 and SiCl
 4
 showed a similar b ehavior where their pro duction showed an increase till ab out 1350 K,
-followed by a decrease. These results highlighted the eect of kinetics , which showed signicant sensitivity
+followed by a decrease. These results highlighted the eect of kinetics , which showed signicant sensitivity
 to temp erature variations.
 The study of the eects of pressure variation was p erformed for a range of press ure s (5 to 100 Torr) at
 three values of op erating temp erature (1150 K, 1250 K, and 1350 K). While MTS, CH
@@ -1978,7 +1930,7 @@ three values of op erating temp erature (1150 K, 1250 K, and 1350 K). While MTS,
 , HCl, SiCl
 2
 showed
-no signicant sensitivity to pres sure , the sp ecies such as SiHCl
+no signicant sensitivity to pres sure , the sp ecies such as SiHCl
 3
 , and SiCl
 4
@@ -1992,23 +1944,23 @@ The study of the e ects of temp erature gradient (temp erature drop across the r
 three inlet temp eratures (1150 K, 1250 K, 1350 K) with a temp erature gradient of -190 K/m to -19 K/m.
 The results s howed an increased decomp osition of MTS due to the presence of a temp erature gradient.
 Howe ver, the eec t of inlet temp erature coupled with the presence of a temp erature gradient yielded a
-complex dep endence of the concentration of the sp ecies on the sp ecied temp erature gradient. The study of
+complex dep endence of the concentration of the sp ecies on the sp ecied temp erature gradient. The study of
 the eects of pressure gradient was p erformed at three values of inlet pressure (5 Torr, 52.5 Torr, and 100
 Torr) and inlet temp erature (1150 K, 1250 K, and 1350 K) conditions. The results did not show sensitivity
 to the pressure gradient for the considered conditions, even for some of the reactive intermediate sp ecies.
 These results highlighted the complex inte rplay of kinetics, thermo dynamics , and transp ort pro cesses, and
 the presence of multiple pathways for the formation of the reactive intermediate sp ecies and bypro ducts.
 Based on the study of e ects of op erating temp erature and pressure conditions on the decomp osition of
-MTS, we identied optimal conditions (1250 K and 5 Torr) and p erformed the study of eects of comp o-
+MTS, we identied optimal conditions (1250 K and 5 Torr) and p erformed the study of eects of comp o-
 sitional variation by varying
-
+
 from 0.05 to 0.2 under isothermal and temp erature-gradient scenarios. The
 variation of mole fraction of sp ecies such as SiHCl
 3
 , HCl, and SiCl
 2
 with
-
+
 was found to b e quasi-linear
 and the variation of
 X
@@ -2021,8 +1973,8 @@ The results from the mo derately complex M2 mechanism s howed go o d agreement w
 mechanism under a wide range of op erating conditions, thus indicating that it can b e used for large-scale
 simulations under CVI-relevant conditions. The discrepancies observed with the M2 mechanism for some
 of the sp ecies at high temp eratures (greater than 1350 K) can b e attributed to the absence of ab out 50\%
-sp ecies in comparison to the M1 mechanism and a signic antly lower numb er of re actions, which aects the
-thermo dynamics and reaction pathways. The study further conrms the limitations of the globally reduced
+sp ecies in comparison to the M1 mechanism and a signic antly lower numb er of re actions, which aects the
+thermo dynamics and reaction pathways. The study further conrms the limitations of the globally reduced
 single-step mechanism, such as the M3 mechanism, and e mphas izes the need for b etter reduction approaches.
 Acknowledgments
 This work was supp orted by the U.S. Department of Energy, Office of Science, Office of Basic Energy
@@ -2180,7 +2132,7 @@ Engineering 28 (2020) 1733-1743.
 [57]
  I. Golecki, Fib ers and Comp osites (2003) 112.
 [58]
- T. S. Aarnˆs, E. Ringdalen, M. Tangstad, Scientic rep orts 10 (2020) 21831.
+ T. S. Aarnˆs, E. Ringdalen, M. Tangstad, Scientic rep orts 10 (2020) 21831.
 [59]
  M. Ksiazek, M. Tangstad, H. Dalaker, E. Ringdalen, Metallurgical and materials transactions E 1 (2014)
 272-279.
