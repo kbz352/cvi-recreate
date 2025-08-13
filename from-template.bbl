@@ -1,0 +1,146 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Meetham1991}
+G.~W. Meetham, High-temperature materials -- a general review, Journal of Materials Science 26 (1991) 853--860.
+
+\bibitem{Tressler1999}
+R.~E. Tressler, S.~Alkoy, A.~Dogan, R.~E. Newnham, Functional composites for sensors, actuators and transducers, Composites Part A: Applied Science and Manufacturing 30~(4) (1999) 477--482.
+
+\bibitem{Belmonte2006}
+M.~Belmonte, ..., Advanced engineering materials 8 (2006) 693--703.
+
+\bibitem{Fahrenholtz2014}
+W.~G. Fahrenholtz, E.~J. Wuchina, W.~E. Lee, Y.~Zhou, Ultra-high temperature ceramics: materials for extreme environment applications, John Wiley \& Sons, 2014.
+
+\bibitem{BarCohen2014}
+Y.~Bar-Cohen, High temperature materials and mechanisms, Volume 44, CRC Press, Boca Raton, FL, USA, 2014.
+
+\bibitem{Levinshtein2001}
+M.~E. Levinshtein, S.~L. Rumyantsev, M.~S. Shur, Properties of Advanced Semiconductor Materials: GaN, AlN, InN, BN, SiC, SiGe, John Wiley \& Sons, 2001.
+
+\bibitem{Hironaka2002}
+K.~Hironaka, T.~Nozawa, T.~Hinoki, N.~Igawa, Y.~Katoh, L.~Snead, A.~Kohyama, …, Journal of nuclear materials 307 (2002) 1093--1097.
+
+\bibitem{Snead2007}
+L.~L. Snead, T.~Nozawa, Y.~Katoh, T.-S. Byun, S.~Kondo, D.~A. Petti, …, Journal of nuclear materials 371 (2007) 329--377.
+
+\bibitem{Presser2008}
+V.~Presser, K.~G. Nickel, …, Critical reviews in solid state and materials sciences 33 (2008) 1--99.
+
+\bibitem{Padture1994}
+N.~P. Padture, …, Journal of the American Ceramic Society 77 (1994) 519--523.
+
+\bibitem{Mulla1994}
+M.~Mulla, V.~Krstic, …, Journal of Materials science 29 (1994) 934--938.
+
+\bibitem{Cao1995}
+J.~J. Cao, W.~Chan, L.~C.~D. Jonghe, C.~J. Gilbert, R.~O. Ritchie, …, Journal of the American Ceramic Society 79 (1995).
+
+\bibitem{Naslain1995}
+R.~Naslain, …, Philosophical Transactions of the Royal Society of London. Series A: Physical and Engineering Sciences 351 (1995) 485--496.
+
+\bibitem{Prewo1989}
+K.~M. Prewo, …, American Ceramic Society Bulletin 68 (1989) 395--400.
+
+\bibitem{Besmann1991}
+T.~Besmann, B.~Sheldon, R.~Lowden, D.~Stinton, …, Science 253 (1991) 1104--1109.
+
+\bibitem{Wang1996}
+M.~Wang, C.~Laird, …, Journal of materials science 31 (1996) 2065--2069.
+
+\bibitem{Prouhet1994}
+S.~Prouhet, G.~Camus, C.~Labrugere, A.~Guette, E.~Martin, …, Journal of the American Ceramic Society 77 (1994) 649--656.
+
+\bibitem{Zhu1999}
+S.~Zhu, M.~Mizuno, Y.~Kagawa, Y.~Mutoh, …, Composites Science and Technology 59 (1999) 833--851.
+
+\bibitem{Liu2023}
+B.~Liu, Y.~Zhou, …, Composite Structures 307 (2023) 116610.
+
+\bibitem{Xu1999}
+Y.~Xu, L.~Cheng, L.~Zhang, …, Carbon 37 (1999) 1179--1187.
+
+\bibitem{DiCarlo2005}
+J.~DiCarlo, H.~M. Yun, G.~Morscher, R.~Bhatt, …, in: Handbook of ceramic composites, 2005, pp. 77--98.
+
+\bibitem{Sirieix1990}
+F.~Sirieix, P.~Goursat, A.~Lecomte, A.~Dauger, …, Composites science and technology 37 (1990) 7--19.
+
+\bibitem{Kohyama2000}
+A.~Kohyama, M.~Kotani, Y.~Katoh, T.~Nakayasu, M.~Sato, T.~Yamamura, K.~Okamura, …, Journal of Nuclear Materials 283 (2000) 565--569.
+
+\bibitem{Sayano1999}
+A.~Sayano, C.~Sutoh, S.~Suyama, Y.~Itoh, S.~Nakagawa, …, Journal of nuclear materials 271 (1999) 467--471.
+
+\bibitem{Lamon2005}
+J.~Lamon, …, in: Handbook of ceramic composites, Springer, 2005, pp. 55--76.
+
+\bibitem{Deck2013}
+C.~P. Deck, H.~Khalifa, B.~Sammuli, C.~Back, …, Science and Technology of Nuclear Installations (2013) 127676.
+
+\bibitem{Katoh2014}
+Y.~Katoh, K.~Ozawa, C.~Shih, T.~Nozawa, R.~J. Shinavski, A.~Hasegawa, L.~L. Snead, …, Journal of Nuclear Materials 448 (2014) 448--476.
+
+\bibitem{Liu2021}
+R.~Liu, F.~Wang, J.~Zhang, J.~Chen, F.~Wan, Y.~Wang, …, Ceramics International 47 (2021) 26971--26977.
+
+\bibitem{Probst1999}
+K.~J. Probst, T.~M. Besmann, D.~P. Stinton, R.~A. Lowden, T.~J. Anderson, T.~L. Starr, …, Surface and Coatings Technology 120 (1999) 250--258.
+
+\bibitem{Stinton1986}
+D.~P. Stinton, A.~J. Caputo, R.~A. Lowden, …, American Ceramic Society Bulletin 65 (1986) 347--350.
+
+\bibitem{Naslain2001}
+R.~R. Naslain, R.~Pailler, X.~Bourrat, S.~Bertrand, F.~Heurtevent, P.~Dupel, F.~Lamouroux, …, Solid State Ionics 141 (2001) 541--548.
+
+\bibitem{Oh2001}
+B.~J. Oh, Y.~J. Lee, D.~J. Choi, G.~W. Hong, J.~Y. Park, W.~J. Kim, …, Journal of the American Ceramic Society 84 (2001) 245--247.
+
+\bibitem{Noda1992}
+T.~Noda, H.~Araki, F.~Abe, M.~Okada, …, Journal of nuclear materials 191 (1992) 539--543.
+
+\bibitem{Naslain2006}
+R.~Naslain, F.~Langlais, G.~Vignoles, R.~Pailler, …, in: Mechanical properties and performance of engineering ceramics II: ceramic engineering and science proceedings, Vol.~27, 2006, pp. 373--386.
+
+\bibitem{Lazzeri2012}
+A.~Lazzeri, …, in: Ceramics and composites processing methods, 2012, pp. 313--349.
+
+\bibitem{Streitwieser2006}
+D.~A. Streitwieser, N.~Popovska, H.~Gerhard, …, Journal of the European Ceramic Society 26 (2006) 2381--2387.
+
+\bibitem{Ramadan2018}
+Z.~Ramadan, I.-T. Im, …, Carbon letters 25 (2018) 25--32.
+
+\bibitem{Cha2022}
+C.~M. Cha, D.~Liliedahl, R.~Sankaran, V.~Ramanuj, …, Journal of the American Ceramic Society 105 (2022) 4595--4607.
+
+\bibitem{Ramanuj2022}
+V.~Ramanuj, R.~Sankaran, B.~Jolly, A.~Schumacher, D.~Mitchell, …, Journal of the American Ceramic Society 105 (2022) 2421--2441.
+
+\bibitem{Deck2012}
+C.~Deck, H.~Khalifa, B.~Sammuli, T.~Hilsabeck, C.~Back, …, Progress in Nuclear Energy 57 (2012) 38--45.
+
+\bibitem{Mollick2017}
+P.~Mollick, R.~Venugopalan, D.~Srivastava, …, Journal of Crystal Growth 475 (2017) 97--109.
+
+\bibitem{Ogawa2023}
+T.~Ogawa, K.~Fukumoto, H.~Machida, K.~Norinaga, …, Heliyon 9 (2023).
+
+\bibitem{Papasouliotis1994}
+G.~D. Papasouliotis, S.~V. Sotirchos, …, Journal of the Electrochemical Society 141 (1994) 1599.
+
+\bibitem{Roman1995}
+Y.~Roman, J.~Kotte, M.~D. Croon, …, Journal of the European Ceramic Society 15 (1995) 875--886.
+
+\bibitem{Mousavipour2004}
+S.~H. Mousavipour, V.~Saheb, S.~Ramezani, …, The Journal of Physical Chemistry A 108 (2004) 1946--1951.
+
+\bibitem{Peng2021}
+J.~Peng, B.~Jolly, D.~J. Mitchell, J.~A. Haynes, D.~Shin, …, Journal of the American Ceramic Society 104 (2021) 3726--3737.
+
+\end{thebibliography}
