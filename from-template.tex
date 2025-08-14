@@ -3,10 +3,11 @@
 \usepackage[
     % margin=1in
     top=1in,
-    bottom=0.5in,
+    bottom=0.7in,
     left=1in,
     right=1in,
-    footskip=0.25in, % FIXME: temp fix
+    %footskip=0.5in, % FIXME: temp fix
+    footnotesep=0.3in,
     % showframe % Uncomment to show frames around the margins for debugging purposes
 ]{geometry}
 
@@ -24,10 +25,9 @@
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 \usepackage{amssymb}
-% \usepackage{gensymb} % not needed
-
-%% The amsthm package provides extended theorem environments
-%% \usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[bottom]{footmisc}
 
 \journal{Energy Policy} % FIXME
 
@@ -35,8 +35,9 @@
 
 \begin{frontmatter}
 
+
 %% Title, authors and addresses
-\title{Effects of Operating Conditions on the Gas-Phase Decomposition of \\ MTS/H$_2$ during Chemical Vapor Infiltration of SiC}
+\title{Effects of Operating Conditions on the Gas-Phase Decomposition of \\ MTS/H$_2$ during Chemical Vapor Infiltration of SiC }
 
 \author[1]{R.~Ranjan\corref{cor1}}
 \ead{reetesh-ranjan@utc.edu}
@@ -61,7 +62,7 @@ Chemical vapor infiltration \sep silicon carbide \sep methyltrichlorosilane \sep
 
 \end{frontmatter}
 
-\let\thefootnote\relax\footnote{Notice: This manuscript has been authored by UT-Battelle, LLC, under contract DEAC05-00OR22725 with the US Depart-ment of Energy (DOE). The US government retains and the publisher, by accepting the article for publication, acknowledges that the US government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this manuscript, or allow others to do so, for US government purposes. DOE will provide public access to these results of federally sponsored research in accordance with the DOE Public Access Plan (\bf \href{http://energy.gov/downloads/doe-public-access-plan}{http://energy.gov/downloads/doe-public-access-plan}).}
+\let\thefootnote\relax\footnote{Notice: This manuscript has been authored by UT-Battelle, LLC, under contract DEAC05-00OR22725 with the US Depart-ment of Energy (DOE). The US government retains and the publisher, by accepting the article for publication, acknowledges that the US government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this manuscript, or allow others to do so, for US government purposes. DOE will provide public access to these results of federally sponsored research in accordance with the DOE Public Access Plan (\ttfamily \href{http://energy.gov/downloads/doe-public-access-plan}{http://energy.gov/downloads/doe-public-access-plan}).}
 
 \section{Introduction}
 \label{S:1}
@@ -80,12 +81,91 @@ The key objective of this study is to first establish a PFR setup, and then to u
 
 This article is arranged as follows. The details for the computational setup and the employed numerical methodology are presented in Section 2. In Section 3, an assessment of the PFR-based computational strategy is performed by comparing the results with reference data from the literature. The results of this study are discussed in Section 4. Finally, the key outcomes of this study are summarized in Section 5.
 
+\section{Setup and Approach}
+\label{S:2}
 
 \begin{figure}[t]
-\centering\includegraphics[width=0.6\textwidth]{PFR-schematic.png}
+\centering\includegraphics[width=0.61\textwidth]{PFR-schematic.png}
 \caption{Schematic of a plug flow reactor-based representation of the hot-wall CVI reactor configuration. Here, $M_i$ denotes the $i^{th}$ plug along the axial ($x$) direction, and $\Delta x$, $\Delta V$, and $R$ denote the axial length, volume, and radius of the plug, respectively.}
 \label{PFR-schematic}
 \end{figure}
+
+In this section, we first describe the details of the CVI reactor configuration. Afterward, the computational method is described. Finally, the details of the chemical mechanisms used in this study are presented.
+
+\subsection{Details of the Setup}
+\label{S:2.1}
+We consider a cylindrical hot-wall flow CVI reactor configuration. A schematic of this reactor is shown in Fig. \ref{PFR-schematic}. The dimensions of the reactor follow a past study \cite{Dang2022}. The axial extent of the cylindrical reactor is $L = 0.52 \rm\ m$, and the inner radius is $R = 0.0048 \rm\ m$. At the inlet of the reactor, a premixed mixture of MTS, $\rm H_2$, and Ar enters at pressure $P$ and temperature $T$. The molar composition at the inlet of the reactor is 95\% Ar and 5\% mixture of MTS and $\rm H_2$. The ratio of molar composition of MTS and $\rm H_2$ is specified to be $\beta$, which is varied in this study from 0.05 to 0.2.
+
+\subsection{Computational Approach}
+\label{S:2.2}
+The chemically reacting flow in the CVI reactor is simulated using a laminar PFR model. Such an approach has been followed in past studies for modeling the flow within CVD and CVI reactors \cite{Dang2022,Roman1995,Bammidipati1996}. A schematic of PFR is shown in Fig. \ref{PFR-schematic}. In a PFR, the steady laminar flow within a duct is modeled, where the gaseous flow in the transverse direction to the axial ($x$) direction is considered to be completely homogeneous. Therefore, changes in the state of the gas can only occur along the $x$ direction. Furthermore, in this modeling approach, all diffusion processes are neglected. As stated in \ref{S:1}, compared to a conventional CFD, even though a PFR is a much simpler representation of the flow, it can include detailed chemical kinetics, thus providing a computationally efficient approach for the simulation of physical phenomena such as pyrolysis, catalytic processes, and emissions.
+
+A PFR is characterized by the state variables, which include density ($\rho$), temperature ($T$), pressure ($P$), mass fraction of $k^{\rm th}$ species, ($Y_k$) and the surface coverage of the $k^{\rm th}$ species ($S_k$). Here, we consider the net production of surface species to be zero, which implies the total surface coverage to be 1. The governing one-dimensional (1D) equations for PFR include conservation of mass, momentum, energy, and species mass equations, which are given by
+\begin{align}
+    u\frac{d\rho}{dx} + \rho\frac{du}{dx} & = 0, \tag{2.1} \\
+    \rho u\frac{du}{dx} & = -\frac{dP}{dx}, \tag{2.2} \\
+    \rho u c_{\rm p} \frac{dT}{dx} & = -\sum^N_{k=1} \overline h_k \dot \omega_k, \tag{2.3} \\
+    \rho u \frac{dY_k}{dx} & = \dot \omega_k W_k, \qquad \textrm{for }\ k = 1,2,\dots,N. \tag{2.4}
+\end{align}
+
+\noindent Here, $c_{\rm p}$ denotes the specific heat of the mixture at constant pressure, $\overline h_k$ and $\dot\omega_k$ denote the molar enthalpy and reaction rate of the $k^{\rm th}$ species, respectively, and $N$ denotes the total number of species. These equations are further supplemented by the ideal gas equation of state
+$\displaystyle \left ( \rho = \frac{P\overline W}{R_u T} \right )$
+for relating the thermodynamic properties, and finite-rate chemical kinetics for determining $\dot\omega_k$. Here, $\overline W$ and $R_u$ denote the mixture molecular weight and universal gas constant, respectively. The system of governing equations is complete by specifying the inlet conditions. Note that, as the diffusion process is neglected, downstream parts of the reactor have no influence on upstream parts. Therefore, PFR can be integrated as initial value problems, starting from the composition at the inlet and moving towards the outlet by considering finite size volume ($\Delta V$), referred to as plugs, as shown in Fig. \ref{PFR-schematic}.
+
+In the present study, the reactor length that is being considered here has a residence time of about 30 ms, which implies a negligible radial diffusion/stratification \cite{Dang2022}. Therefore, the PFR model utilizes a longer residence time of 500 ms than this critical limit. The PFR simulations are carried out using the Cantera
+software \cite{Goodwin2014}, which is a well-established open-source software for the simulation of problems pertaining to thermodynamics, chemical kinetics, and transport processes.
+
+\subsection{Chemical Kinetics Mechanisms}
+\label{S:2.3}
+We consider three chemical mechanisms with different levels of fidelity. These include a detailed 42 species and 103 steps mechanism \cite{Ge2007A,Ge2007B,Ge2010}, a moderately complex 20 species and 30 steps mechanism, and a globally reduced 5 species and 1 step mechanism \cite{Mousavipour2004}. Hereafter, these mechanisms are referred to as M1, M2, and M3, respectively. Here, the mechanism M1 serves as a reference for comparing the performance of the other two mechanisms. The globally reduced mechanism M3, as reported in past studies \cite{Dang2022,Mousavipour2004}, tends to be inadequate to describe the decomposition of MTS due to very few chemical species. The moderately complex mechanism M2 can be potentially useful for CFD and DSMC simulations, as it employs 20 species, which can potentially capture the effects of kinetics while still being cost-effective compared to the M1 mechanism. 
+
+While M1 and M3 mechanisms are obtained from past studies, M2 is obtained by performing a reduction of the M1 mechanism using the Cantera software \cite{Goodwin2014}. The reduction strategy simulates an adiabatic constant pressure reactor over a range of pressure and temperature conditions relevant to this study, tracks the maximum reaction rates for each reaction, and identifies the important reactions based on the relative net reaction rate. This is followed by creating a series of reduced chemical mechanisms, including only the top reactions and the associated species, and performing the simulations again with these mechanisms to see whether the reduced mechanisms with a certain number of species are able to adequately simulate the reactor. The comparison of results from different reduced chemical mechanisms with the detailed M1 mechanism and dominant reactions obtained for major species using sensitivity analysis is discussed in Sec. \ref{S:3.1}.
+
+\begin{table}[t] % FIXME: line breaks are not in same spot as original. why?
+    \centering
+    \caption{List of species in the M1, M2, and M3 chemical mechanisms.}
+    \label{table:1}
+    \begin{tabular}{ | p{0.11\textwidth}<{\centering} | p{0.8\textwidth}<{\centering}|}
+        \hline
+        Mechanism & Species \\
+        \hline
+        M1 & $\rm CH_3SiCl_3$, $\rm H_2$, $\rm CH_3$, $\rm SiCl_3$, $\rm H$, $\rm CH_2SiCl_3$, $\rm Cl$, $\rm CH_3SiCl_2$, $\rm CH_2SiCl_2$, $\rm HCl$, $\rm SiCl_2$, $\rm CH_2$, $\rm SiHCl_3$, $\rm CHSiCl_3$, $\rm CH_3SiCl$, $\rm Cl_2$, $\rm CH_4$, $\rm C_2H_5$, $\rm CH_2Cl$, $\rm CH_2Cl_2$, $\rm C_2H_4$, $\rm C_2H_2$, $\rm C_2H_3$, $\rm CH_2C$, $\rm CH_3C$, $\rm C_2H$, $\rm C_2H_5Cl$, $\rm C_2H_3Cl$, $\rm SiCl_4$, $\rm Si_2Cl_5$, $\rm Si_2Cl_4$, $\rm Si_2Cl_6$, $\rm SiHCl_2$, $\rm SiH_2Cl_2$, $\rm SiHCl$, $\rm SiH_2Cl$, $\rm SiH_3Cl$, $\rm CH_3SiHCl_2$, $\rm CH_2SiHCl$, $\rm C_2H_6$, $\rm CH_3SiH_2Cl$, $\rm Ar$ \\
+        \hline
+        M2 & $\rm SiCl_4$, $\rm CH_2SiCl_2$, $\rm H$, $\rm H_2$, $\rm SiHCl_3$, $\rm SiCl_2$, $\rm SiHCl_2$, $\rm SiCl_3$, $\rm HCl$, $\rm SiH_3Cl$, $\rm CH_2SiCl_3$, $\rm CH_4$, $\rm SiH_2Cl_2$, $\rm CH_3SiHCl_2$, $\rm CH_3SiCl_2$, $\rm CH_3$, $\rm Cl $, $\rm SiHCl$, $\rm CH_3SiCl_3$, $\rm Ar$ \\
+        \hline
+        M3 & $\rm CH_3SiCl_3$, $\rm H_2$, $\rm CH_4$, $\rm SiHCl_3$, $\rm Ar$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Assessment of Computational Strategy}
+\label{S:3}
+In this section, we first discuss the results from the reduction of the M1 mechanism yielding the M2 mechanism. Afterward, we compare the computational cost of the three mechanisms. Finally, we perform a verification and validation study using these mechanisms to establish the PFR-based strategy for further studies.
+
+\subsection{Reduction of Chemical Mechanism}
+\label{S:3.1}
+To perform the reduction of the detailed mechanism M1, we simulate adiabatic constant-pressure reactors for 200 ms. We examine the accuracy of reduced mechanisms with increasing degree of complexity for a range of reactor temperatures (1100 K to 1600 K) and pressures (5 Torr to 100 Torr). The number of chemical reactions to be used in the reduced mechanism was varied from 10 to 50. As discussed in Sec. \ref{S:2.3}, the reduction strategy identifies the most active reactions. It resulted in mechanisms with the number of species varying from 12-28, with 10-50 reactions.
+
+Figures 2 and 3 show the variation of mole fraction of MTS (XMTS ) and CH4 (XCH4 ), respectively
+with respect to time. These species are chosen as they tend to be dominant species that participate in
+the homogeneous reactions and can further affect the heterogeneous surface reactions. At T = 1100 K, all
+reduced mechanisms with 10-20 reactions yield excellent agreement with the reference M1 mechanism at
+low (5 Torr) and high (100 Torr) pressure. The differences tend to occur only at higher temperatures (T =
+1300 K and T = 1600 K), particularly with the reduced mechanism having 10 reactions. Such a difference
+with 10 reactions is observed for both MTS decomposition and CH4 production. This can be attributed to
+enhanced decomposition/production of MTS/CH4 at higher temperature, which is affected by the presence of
+reactions involving reactive intermediates when 20 or more reactions are included. At 1300 K, the pressure
+sensitivity is also observed as the error magnitude in the variation of XMTS and XCH4 with the 10-step
+mechanism is increased at higher pressure. At the highest temperature (T = 1600 K) and highest pressure
+(P = 100 Torr), error is also observed with 20-step mechanisms. Based on these results, it can be inferred
+that a mechanism with 20 species and 30 reactions yields accurate results for the range of temperatures and
+pressures considered here. Therefore, for further studies, we consider the M2 mechanism to have 20 species
+and 30 reactions. Table 1 lists all the species included in the three mechanisms.
+To further examine the dominant reactions corresponding to different species while using M1 and M2
+mechanisms, a sensitivity analysis for different species is performed. The results from this analysis are shown
+in Fig. 4 for MTS, CH4 , and HCl. With both M1 and M2 mechanisms, the three dominant reactions are the
+same, which are given by
+
 
 \section*{Acknowledgements}
 This work was supported by the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences (BES), Gas Phase Chemical Physics (GPCP) through Grant \#DE-SC0024510.

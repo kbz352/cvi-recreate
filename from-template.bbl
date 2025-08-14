@@ -161,4 +161,7 @@ S.~H. Mousavipour, V.~Saheb, S.~Ramezani, …, The Journal of Physical Chemistry
 \bibitem{Peng2021}
 J.~Peng, B.~Jolly, D.~J. Mitchell, J.~A. Haynes, D.~Shin, …, Journal of the American Ceramic Society 104 (2021) 3726--3737.
 
+\bibitem{Goodwin2014}
+D.~G. Goodwin, H.~K. Moffat, R.~L. Speth, Cantera: An object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes, \url{http://www.cantera.org}, version 2.1.2 (2014).
+
 \end{thebibliography}
