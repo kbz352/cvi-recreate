@@ -146,26 +146,87 @@ In this section, we first discuss the results from the reduction of the M1 mecha
 \label{S:3.1}
 To perform the reduction of the detailed mechanism M1, we simulate adiabatic constant-pressure reactors for 200 ms. We examine the accuracy of reduced mechanisms with increasing degree of complexity for a range of reactor temperatures (1100 K to 1600 K) and pressures (5 Torr to 100 Torr). The number of chemical reactions to be used in the reduced mechanism was varied from 10 to 50. As discussed in Sec. \ref{S:2.3}, the reduction strategy identifies the most active reactions. It resulted in mechanisms with the number of species varying from 12-28, with 10-50 reactions.
 
-Figures 2 and 3 show the variation of mole fraction of MTS (XMTS ) and CH4 (XCH4 ), respectively
-with respect to time. These species are chosen as they tend to be dominant species that participate in
-the homogeneous reactions and can further affect the heterogeneous surface reactions. At T = 1100 K, all
-reduced mechanisms with 10-20 reactions yield excellent agreement with the reference M1 mechanism at
-low (5 Torr) and high (100 Torr) pressure. The differences tend to occur only at higher temperatures (T =
-1300 K and T = 1600 K), particularly with the reduced mechanism having 10 reactions. Such a difference
-with 10 reactions is observed for both MTS decomposition and CH4 production. This can be attributed to
-enhanced decomposition/production of MTS/CH4 at higher temperature, which is affected by the presence of
-reactions involving reactive intermediates when 20 or more reactions are included. At 1300 K, the pressure
-sensitivity is also observed as the error magnitude in the variation of XMTS and XCH4 with the 10-step
-mechanism is increased at higher pressure. At the highest temperature (T = 1600 K) and highest pressure
-(P = 100 Torr), error is also observed with 20-step mechanisms. Based on these results, it can be inferred
-that a mechanism with 20 species and 30 reactions yields accurate results for the range of temperatures and
-pressures considered here. Therefore, for further studies, we consider the M2 mechanism to have 20 species
-and 30 reactions. Table 1 lists all the species included in the three mechanisms.
-To further examine the dominant reactions corresponding to different species while using M1 and M2
-mechanisms, a sensitivity analysis for different species is performed. The results from this analysis are shown
-in Fig. 4 for MTS, CH4 , and HCl. With both M1 and M2 mechanisms, the three dominant reactions are the
-same, which are given by
+Figures \ref{T-vs-t-MTS} and \ref{T-vs-t-CH4} show the variation of mole fraction of MTS ($X_{\rm MTS}$) and CH$_4$ ($X_{\rm CH_4}$), respectively with respect to time. These species are chosen as they tend to be dominant species that participate in the homogeneous reactions and can further affect the heterogeneous surface reactions. At T = 1100 K, all reduced mechanisms with 10-20 reactions yield excellent agreement with the reference M1 mechanism at low (5 Torr) and high (100 Torr) pressure. The differences tend to occur only at higher temperatures (T = 1300 K and T = 1600 K), particularly with the reduced mechanism having 10 reactions. Such a difference with 10 reactions is observed for both MTS decomposition and CH$_4$ production. This can be attributed to enhanced decomposition/production of MTS/CH$_4$ at higher temperature, which is affected by the presence of reactions involving reactive intermediates when 20 or more reactions are included. At 1300 K, the pressure sensitivity is also observed as the error magnitude in the variation of $X_{\rm MTS}$ and $X_{\rm CH_4}$ with the 10-step mechanism is increased at higher pressure. At the highest temperature (T = 1600 K) and highest pressure (P = 100 Torr), error is also observed with 20-step mechanisms. Based on these results, it can be inferred that a mechanism with 20 species and 30 reactions yields accurate results for the range of temperatures and pressures considered here. Therefore, for further studies, we consider the M2 mechanism to have 20 species and 30 reactions. Table \ref{table:1} lists all the species included in the three mechanisms. 
 
+\begin{figure}[p] % FIXME: only using placeholder graphics
+    \centering\includegraphics[width=\textwidth]{ph-fig2.png}
+\caption{Comparison of time evolution of the mole fraction of MTS obtained using chemical mechanisms with different levels of complexity at T = 1100 K (a, b), T = 1300 K (c, d), and T = 1600 K (e, f) at P = 5 Torr (a, c, e) and P = 100 Torr (b, d, f). Here, K and R denotes the number of species and chemical reactions, respectively.}
+\label{T-vs-t-MTS}
+\end{figure}
+
+\begin{figure}[p]
+    \centering\includegraphics[width=\textwidth]{ph-fig3.png}
+\caption{Comparison of time evolution of the mole fraction of CH$_4$ obtained using chemical mechanisms with different levels of complexity at T = 1100 K (a, b), T = 1300 K (c, d), and T = 1600 K (e, f) at P = 5 Torr (a, c, e) and P = 100 Torr (b, d, f). Here, K and R denotes the number of species and chemical reactions, respectively.}
+\label{T-vs-t-CH4}
+\end{figure}
+
+\begin{figure}[tp] % FIXME: positioning of figures
+    \centering\includegraphics[width=\textwidth]{ph-fig4.png}
+\caption{Six dominant reactions for MTS (a, b), CH$_4$ (c, d), and HCl (e, f) obtained using sensitivity analysis with M1 and M2 mechanisms.}
+\label{Reactions-MTS-CH4-HCl}
+\end{figure}
+
+To further examine the dominant reactions corresponding to different species while using M1 and M2 mechanisms, a sensitivity analysis for different species is performed. The results from this analysis are shown in Fig. \ref{Reactions-MTS-CH4-HCl} for MTS, CH$_4$ , and HCl. With both M1 and M2 mechanisms, the three dominant reactions are the same, which are given by
+\begin{align} %FIXME: tags in original are not right aligned like these are
+    \rm CH_3SiCl_3 \leftrightarrow CH_2SiCl_2 + HCl, & \tag{R1} \\
+    \rm CH_3SiCl_3 \leftrightarrow CH_3 + SiCl_3, & \tag{R2} \\
+    \rm CH_3 + H_2 \leftrightarrow CH_4 + H, & \tag{R3}
+\end{align}
+
+\noindent Out of these three reactions, MTS is more sensitive to R1 and R2. These reactions play a critical role in the decomposition of MTS and leads to formation of reactive intermediates such as $\rm CH_2SiCl_2$, CH$_3$, and SiCl$_3$, which can further decompose, combine, or participate in heterogeneous surface reactions. Additionally, R1 also leads to HCl, which is a byproduct responsible for gas-phase etching \cite{Wang2008,Guan2020}. The R3 reaction is primarily responsible for the formation of CH$_4$, which can help avoid contamination, and the radical H, which is crucial for the removal of Cl and the promotion of SiC growth through heterogeneous reactions \cite{Brennan1990}. 
+
+For CH$_4$ , R1 and R3 are the first two dominant reactions (see Fig. \ref{Reactions-MTS-CH4-HCl}(c) and (d)), which are found in both M1 and M2 mechanisms. However, the third dominant reaction is different for CH$_4$ with M1 and M2 mechanisms. While the M1 mechanism shows the third dominant reaction to be decomposition of $\rm C_2H_6$ into CH$_3$ radical through the reaction
+\begin{align*}
+    \rm C_2H_6 \leftrightarrow 2CH_3,
+\end{align*}
+the M2 mechanism shows the third dominant reaction as:
+\begin{align*}
+    \rm CH_2SiCL_3 + H2 \leftrightarrow CH_3SiCl_3 + H.
+\end{align*}
+This difference could be due to the absence of $\rm C_2H_6$ in the M2 mechanism (see Table \ref{table:1}). Although the third dominant reaction for CH$_4$ differs for the M1 and M2 mechanisms, the sensitivity of the first two dominant reactions is much higher compared to the third reaction.
+
+An important byproduct during the decomposition of MTS is HCl. With both M1 and M2 mechanisms, similar to MTS, R1 and R2 are the first two dominant reactions (see Fig. \ref{Reactions-MTS-CH4-HCl}(e) and (f)), whereas the third dominant reaction is
+\begin{align*}
+    \rm SiCl_3 \leftrightarrow SiCl_2 + Cl.
+\end{align*}
+This is an intermediate and critical reaction, as SiCl$_2$ is a direct precursor to SiC formation via heterogeneous reaction with H$_2$ or CH$_2$ at the surface \cite{Papasouliotis1994}. On the other hand, the radical Cl can either react with H$_2$, leading to the formation of HCl, which in turn can prevent the formation of the undesirable Cl-rich byproducts such as SiCl$_4$.
+
+To summarize, the results discussed in this section from the adiabatic reactor simulations and sensitivity analysis demonstrate that the reduced M2 mechanism can be considered adequate to capture the key aspects of MTS decomposition in the presence of H$_2$ in comparison to the detailed M1 mechanism for the conditions relevant to this study.
+
+\subsection{Computational Cost}
+As the number of species and reactions tends to differ in the three chemical mechanisms, it is expected that the computational cost will differ. A key focus of the present work is to demonstrate that moderately complex chemical kinetics, such as the M2 mechanism, can yield accurate results, which in turn can be used with CFD simulations. Here, we assess the computational cost of the three mechanisms by simulating a PFR at a pressure of 5 Torr and a temperature of 1350 K. The computational cost comparison is shown in Table \ref{table:2}.
+
+\begin{table}[t]
+    \centering
+    \caption{Comparison of computational cost for 1 PFR simulation using M1, M2, and M3 mechanisms.}
+    \label{table:2}
+    \begin{tabular}{ | c | c | c | }
+        \hline
+        Mechanism & Computational Cost [s] & Relative Cost [\%] \\
+        \hline
+        M1 & 10.4 & 100 \\
+        M2 & 4.6 & 44.2 \\
+        M3 & 2.7 & 26 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+As expected, the computational cost of the M2 and M3 mechanisms is lower than the detailed M1 mechanism. The cost of M2 decreases primarily due to a decrease in the number of species compared to M1, from 42 to 20, with a much less impact of a decrease in the number of reactions. Note that mechanisms such as M2 can be used for CFD simulations, as mechanisms with 15-20 chemical species tend to be manageable while employing finite-rate kinetics. However, it should be noted that the cost of a CFD simulation, apart from including the kinetics cost, also includes the cost of computation of convective and diffusive fluxes, which can be comparable to or larger than the cost of kinetics compared to a PFR simulation. The cost of M3 does not linearly scale with the number of species, which can be associated with a reduced rate of convergence of the PFR simulation with the M1 mechanism.
+
+\subsection{Verification and Validation}
+\begin{figure}[t] % FIXME: only using placeholder graphics
+    \centering\includegraphics[width=\textwidth]{ph-fig5.png}
+    \caption{Variation of mole fraction of MTS (a) and CH$_4$ (b) with respect to temperature. Experimental data and ‘Ref‘ data corresponds to experimental and computational study using detailed mechanism \cite{Dang2022}.}
+\label{fig:5}
+\end{figure}
+
+We perform the verification and validation of the PFR-based strategy by simulating MTS decomposition in the presence of H$_2$ at an operating pressure of 1 atm (760 Torr), inlet composition ratio of 0.1, and over a range of temperatures varying from 1100 K to 1600 K. The results are compared in Fig. \ref{fig:5}, which includes the variation of the mole fraction of MTS and CH$_4$ with respect to temperature. For comparison, we also include experimental and computational results obtained using a detailed chemical mechanism from a past study \cite{Dang2022}. Note that the detailed mechanism used in the reference study was devised to match the experimental data. Furthermore, the operating pressure of the present configuration is much higher than that of a typical CVI, which is usually operated at lower pressures. 
+
+Both M1 and M2 mechanisms yield the same results for MTS, which starts to decompose gradually from 1100 K to 1200 K, and then rapidly leads to a nearly complete decomposition by 1350 K. The values of MTS by these mechanisms are over-predicted compared to the reference results. Although the rate of decomposition of MTS from the M1 and M3 mechanisms matches during early and later stages with the reference computational results, the decomposition of MTS is delayed with respect to temperature. The results from the M3 mechanism are under-predicted compared to the reference results and show an early and faster rate of decomposition of MTS. Typically, one-step mechanisms, such as the M3 mechanism, are devised so that the variation of major species is captured well, which is not the case here, thus indicating its inaccuracy.
+
+The results for the variation of CH4 mole fraction (see Fig. \ref{fig:5}(b)) from the M1 and M2 mechanisms tend to match till 1350 K. At temperatures beyond 1350 K, the M1 mechanism show reduced levels of CH$_4$ implying its further decomposition, whereas the M2 mechanism yields constant values of CH$_4$. The differences can be attributed to the effects of reduced number of species and reactions in the M2 mechanism compared to the M1 mechanism, which can affect the thermodynamics and reaction pathways. However, for typical CVI conditions of 800 to 1000 $^o$C, both mechanisms yield similar results, implying M2 can be considered to be accurate with respect to M1. As Fig. \ref{fig:5}(a) showed a delayed decomposition of MTS with respect to temperature using M1 and M2 mechanisms, this leads to a delayed production of CH$_4$ compared to the reference results. The peak value of CH$_4$ and its variation at higher temperatures by the M1 mechanism show good agreement with the reference computational results. Compared to experimental data, the peak values of CH$_4$ are over-predicted by all mechanisms. With the M3 mechanism, the production of CH$_4$ is over-predicted as it correlates with the under-prediction of MTS in Fig. \ref{fig:5}(a).
+
+The results shown here demonstrate that the PFR strategy employed here can capture the decomposition of MTS in the presence of H$_2$. There are differences in the results from the detailed M1 mechanism and the detailed mechanism proposed in the reference study \cite{Dang2022}, which was devised to capture the experimental results. However, these differences are associated with a delayed start of decomposition of MTS and pro- duction of CH$_4$ with respect to temperature, although the rates of decomposition of MTS and production of CH$_4$ tend to match. In this study, we have not made any attempts to modify the baseline M1 mechanism, as the experimental data is only available at 760 Torr, whereas this study examines CVI reactor configurations at lower pressures. Therefore, the results from the M1 mechanism are considered as a reference in the rest of this study to examine the effects of operating conditions on the MTS decomposition and to assess the performance of the M2 and M3 mechanisms.
 
 \section*{Acknowledgements}
 This work was supported by the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences (BES), Gas Phase Chemical Physics (GPCP) through Grant \#DE-SC0024510.
