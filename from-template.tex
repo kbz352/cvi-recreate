@@ -27,6 +27,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage{subcaption} % for subfigures
 \usepackage[bottom]{footmisc}
 
 \journal{Energy Policy} % FIXME
@@ -244,8 +245,45 @@ It is evident that the aforementioned species play a crucial role in affecting t
 To examine the effects of operating temperature ($T$), we simulate the PFR over a range of values of $T$ from 1100 K to 1600 K. Additionally, each PFR simulation is performed at three values of operating pressure ($P$), which include 5 Torr, 52.5 Torr, and 100 Torr. From these simulations, the mole fraction of several of the species is obtained at the exit of the reactor, which are shown in Fig. \ref{fig:6}.
 
 It is evident from Fig. \ref{fig:6}(a) that MTS tends to decompose at a slower rate for $T$ varying from 1100 to about 1180 K with both M1 and M2 mechanisms. However, beyond this value of $T$, it tends to decompose at a higher rate. For $T$ > 1350 K, no MTS is observed at the exit of the PFR, implying its complete decomposition. These results are consistent with the past studies conducted at different pressure values \cite{Dang2022,Peng2021,Yang2009}, which have also shown that MTS in the presence of H$_2$ starts to decompose around $T\approx$ 1100 K and the rate of decomposition increases with an increase in $T$. Both M1 and M2 mechanisms yield identical results, however, the globally reduced M3 mechanism leads to a significant over-prediction of MTS.
-\begin{figure}[p]
-    \centering\includegraphics[width=\textwidth]{ph-fig6.png}
+% \begin{figure}[p]
+%     \centering\includegraphics[width=\textwidth]{ph-fig6.png}
+%     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to temperature at three values of operating pressure (5 Torr, 52.5 Torr, and 100 Torr).}
+%     \label{fig:6}
+% \end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{T-vs-MTS-compare}
+        \caption{MTS}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{T-vs-CH4-compare}
+        \caption{$\rm CH_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{T-vs-SiHCl3-compare}
+        \caption{$\rm SiHCl_3$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{T-vs-SiCl4-compare}
+        \caption{$\rm SiCl_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{T-vs-HCl-compare}
+        \caption{HCl}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{T-vs-SiCl2-compare}
+        \caption{$\rm SiCl_2$}
+    \end{subfigure}
     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to temperature at three values of operating pressure (5 Torr, 52.5 Torr, and 100 Torr).}
     \label{fig:6}
 \end{figure}
@@ -262,8 +300,44 @@ Based on the results discussed in this section for the effects of $T$, we can in
 
 \subsection{Effects of Pressure}
 \label{S:4.2}
-\begin{figure}[p]
-    \centering\includegraphics[width=\textwidth]{ph-fig7.png}
+% \begin{figure}[p]
+%     \centering\includegraphics[width=\textwidth]{ph-fig7.png}
+%     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to pressure at three values of operating temperature (1150 K, 1250 K, and 1350 K).}
+%     \label{fig:7}
+% \end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{P-vs-MTS-compare}
+        \caption{MTS}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{P-vs-CH4-compare}
+        \caption{$\rm CH_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{P-vs-SiHCl3-compare}
+        \caption{$\rm SiHCl_3$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{P-vs-SiCl4-compare}
+        \caption{$\rm SiCl_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{P-vs-HCl-compare}
+        \caption{HCl}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{P-vs-SiCl2-compare}
+        \caption{$\rm SiCl_2$}
+    \end{subfigure}
     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to pressure at three values of operating temperature (1150 K, 1250 K, and 1350 K).}
     \label{fig:7}
 \end{figure}
@@ -293,13 +367,86 @@ Overall, the results in this section illustrate that the sensitivity of the mole
 variation.
 
 \subsection{Effects of Temperature Gradient}
-\begin{figure}[p]
-    \centering\includegraphics[width=\textwidth]{ph-fig8.png}
+% \begin{figure}[p]
+%     \centering\includegraphics[width=\textwidth]{ph-fig8.png}
+%     \caption{Variation of mole fraction of MTS (a, c, e) and CH$_4$ (b, d, f) with respect to the temperature gradient at three values of operating pressure (5 Torr, 52.5 Torr, and 100 Torr) at inlet temperature of 1150 K (a, b), 1250 K (c, d), and 1350 K (e, f). The results from the M3 mechanism are not visible in these figures as they are significantly over-predicted for MTS and under-predicted for CH$_4$.}
+%     \label{fig:8}
+% \end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-MTS-T-1150-compare}
+        \caption{MTS $(T=1150\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-CH4-T-1150-compare}
+        \caption{$\rm CH_4$ $(T=1150\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-MTS-T-1250-compare}
+        \caption{MTS $(T=1250\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-CH4-T-1250-compare}
+        \caption{$\rm CH_4$ $(T=1250\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-MTS-T-1350-compare}
+        \caption{MTS $(T=1350\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-CH4-T-1350-compare}
+        \caption{$\rm CH_4$ $(T=1350\rm\ K)$}
+    \end{subfigure}
+
     \caption{Variation of mole fraction of MTS (a, c, e) and CH$_4$ (b, d, f) with respect to the temperature gradient at three values of operating pressure (5 Torr, 52.5 Torr, and 100 Torr) at inlet temperature of 1150 K (a, b), 1250 K (c, d), and 1350 K (e, f). The results from the M3 mechanism are not visible in these figures as they are significantly over-predicted for MTS and under-predicted for CH$_4$.}
     \label{fig:8}
 \end{figure}
-\begin{figure}[p]
-    \centering\includegraphics[width=\textwidth]{ph-fig9.png}
+% \begin{figure}[p]
+%     \centering\includegraphics[width=\textwidth]{ph-fig9.png}
+%     \caption{Variation of mole fraction of SiHCl$_3$ (a, c, e) and HCl (b, d, f) with respect to the temperature gradient at three values of operating pressure (5 Torr, 52.5 Torr, and 100 Torr) at inlet temperature of 1150 K (a, b), 1250 K (c, d), and 1350 K (e, f). Some of the results from the M3 mechanism are not visible in these figures as they are significantly over- or under-predicted compared to the M1 and M2 mechanisms.}
+%     \label{fig:9}
+% \end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-SiHCl3-T-1150-compare}
+        \caption{$\rm SiHCl_3$ $(T=1150\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-HCl-T-1150-compare}
+        \caption{HCl $(T=1150\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-SiHCl3-T-1250-compare}
+        \caption{$\rm SiHCl_3$ $(T=1250\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-HCl-T-1250-compare}
+        \caption{HCl $(T=1250\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-SiHCl3-T-1350-compare}
+        \caption{$\rm SiHCl_3$ $(T=1350\rm\ K)$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dT-vs-HCl-T-1350-compare}
+        \caption{HCl $(T=1350\rm\ K)$}
+    \end{subfigure}
     \caption{Variation of mole fraction of SiHCl$_3$ (a, c, e) and HCl (b, d, f) with respect to the temperature gradient at three values of operating pressure (5 Torr, 52.5 Torr, and 100 Torr) at inlet temperature of 1150 K (a, b), 1250 K (c, d), and 1350 K (e, f). Some of the results from the M3 mechanism are not visible in these figures as they are significantly over- or under-predicted compared to the M1 and M2 mechanisms.}
     \label{fig:9}
 \end{figure}
@@ -322,10 +469,46 @@ The production of HCl is enhanced with an increase in $\Delta T$ at all inlet te
 To summarize, the presence of a temperature gradient favors the decomposition of MTS, which in turn leads to the production of the byproducts. However, the effect of operating temperature leads to a complex dependence of the mole fraction of the species on the temperature gradient, which highlights the effects of kinetics, thermodynamics, and transport processes, and the presence of multiple pathways for the formation of several intermediate reactive species.
 
 \subsection{Effects of Pressure Gradient}
-\begin{figure}[p]
-    \centering\includegraphics[width=\textwidth]{ph-fig10.png}
-    \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to the \% drop in pressure at three values of operating temperature (1150 K, 1250 K, and 1350 K) at inlet pressure of 5 Torr.}
-    \label{fig:10}
+% \begin{figure}[p]
+%     \centering\includegraphics[width=\textwidth]{ph-fig10.png}
+%     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to the \% drop in pressure at three values of operating temperature (1150 K, 1250 K, and 1350 K) at inlet pressure of 5 Torr.}
+%     \label{fig:10}
+% \end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dP-vs-MTS-P-5-compare}
+        \caption{MTS}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dP-vs-CH4-P-5-compare}
+        \caption{$\rm CH_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dP-vs-SiHCl3-P-5-compare}
+        \caption{$\rm SiHCl_3$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dP-vs-SiCl4-P-5-compare}
+        \caption{$\rm SiCl_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dP-vs-HCl-P-5-compare}
+        \caption{HCl}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{dP-vs-SiCl2-P-5-compare}
+        \caption{$\rm SiCl_2$}
+    \end{subfigure}
+     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to the \% drop in pressure at three values of operating temperature (1150 K, 1250 K, and 1350 K) at inlet pressure of 5 Torr.}
+     \label{fig:10}
 \end{figure}
 
 Now, we examine the effect of the pressure gradient on the decomposition. To perform this analysis, we consider three inlet pressures, namely, 5 Torr, 52.5 Torr, and 100 Torr. For each inlet pressure, we vary the pressure along the axial direction, leading to a favorable pressure gradient across the reactor, akin to a forced flow condition. We specify the pressure drop, $\Delta P$, across the reactor length $L$ to be $\alpha P$, with the value of $\alpha$ being varied from 10\% to 80\%. This implies that the pressure gradient in the axial direction ($dP/dx$) varies from -7.7 Torr/m to -0.97 Torr/m at $P$ = 5 Torr, from -80.8 Torr/m to -10 Torr/m at $P$ = 52.5 Torr, and from -153.4 Torr/m to 19.2 Torr/m at $P$ = 100 Torr.
@@ -335,6 +518,49 @@ Figure \ref{fig:10} shows the effects of $dP/dx$ on the mole fractions of the 6 
 While MTS, SiHCl$_3$, HCl, and SiCl$_2$ show similar results with the M1 and M2 mechanisms, the results for CH$_4$ and SiCl$_4$ show differences. In particular, the production of CH$_4$ by the M2 mechanism is overpredicted at $T$ = 1350 K. The production of SiCl$_4$ is under-predicted at both 1250 K and 1350 K. These results imply the role of kinetics, which is more sensitive at higher temperatures and availability of the multiple pathways for production/consumption of byproducts and other reactive intermediates in the M1 mechanism.
 
 \subsection{Effects of Compositional Variation}
+% \begin{figure}[p]
+%     \centering\includegraphics[width=\textwidth]{ph-fig11.png}
+%     \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to $\beta$ for isothermal and temperature gradient conditions at inlet temperature of 1250 K and pressure of 5 Torr.}
+%     \label{fig:11}
+% \end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{beta-vs-MTS-compare}
+        \caption{MTS}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{beta-vs-CH4-compare}
+        \caption{$\rm CH_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{beta-vs-SiHCl3-compare}
+        \caption{$\rm SiHCl_3$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{beta-vs-SiCl4-compare}
+        \caption{$\rm SiCl_4$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{beta-vs-HCl-compare}
+        \caption{HCl}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\textwidth]{beta-vs-SiCl2-compare}
+        \caption{$\rm SiCl_2$}
+    \end{subfigure}
+    \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to $\beta$ for isothermal and temperature gradient conditions at inlet temperature of 1250 K and pressure of 5 Torr.}
+    \label{fig:11}
+\end{figure}
+
+
 Now, we examine the effects of compositional variation ($\beta = X_{\rm MTS}/X_{H_2}$) at the inlet by considering $\beta \in (0.05,0.2)$. We consider two types of reactor configurations. In the first case, operating temperature and pressure are specified to be 1250 K and 5 Torr, respectively. In the second case, the pressure is specified to be 5 Torr, however, we consider a temperature gradient of $\Delta T$ = 60 K across the length of the reactor, with the inlet temperature specified to be 1250 K. These conditions are chosen based on the results discussed before, where we observed minor sensitivity to pressure and major sensitivity to temperature and temperature gradient. Figure \ref{fig:11} shows the results from the two types of cases. As the mechanism M3 yields inaccurate results, we only consider M1 and M2 mechanisms to examine the effects of $\beta$.
 
 In the case with temperature gradient, the decomposition of MTS is enhanced, which is apparent from a significant decrease in the value of $X_{\rm MTS}$ for all values of $\beta$. The decrease is much higher for larger values of $\beta$. Such behavior is due to the combined effect of higher temperature and the presence of a temperature gradient. The enhancement in MTS decomposition in the cases with higher temperature gradients is accompanied by an increase in the production of the intermediate reactive species. Furthermore, a higher level of production of these species occurs for larger values of $\beta$. While the variation of mole fraction of species such as SiHCl$_3$, HCl, and SiCl$_2$ with $\beta$ is quasi-linear, the variation of $X_{\rm SiCl_4}$ tends be nonlinear with respect to $\beta$ in both isothermal and temperature gradient cases. Furthermore, the mole fraction of all species from the M2 mechanism matches with the values obtained using the M1 mechanism, which again demonstrates the adequacy of the M2 mechanism for different types of reactor conditions.
@@ -342,11 +568,6 @@ In the case with temperature gradient, the decomposition of MTS is enhanced, whi
 The results in this section demonstrate that the decomposition of MTS can be enhanced at a particular operating temperature by enforcing a temperature gradient across the reactor. Such an approach allows for relatively low-temperature conditions to still lead to enhanced decomposition of MTS, which can subsequently assist in SiC deposition on the surface while accounting for the heterogeneous reactions. Note that the commonly used operating temperature for the deposition of SiC matrix composite is around 1200 K to 1300 K. Therefore, with a temperature gradient across the reactor, the decomposition process can be enhanced further.
 
 \section{Conclusions}
-\begin{figure}[p]
-    \centering\includegraphics[width=\textwidth]{ph-fig11.png}
-    \caption{Variation of mole fraction of MTS (a), CH$_4$ (b), SiHCl$_3$ (c), SiCl$_4$ (d), HCl (e), and SiCl$_2$ (f) with respect to $\beta$ for isothermal and temperature gradient conditions at inlet temperature of 1250 K and pressure of 5 Torr.}
-    \label{fig:11}
-\end{figure}
 CVI is a reliable approach for fabricating high-purity SiC matrix composite, which has excellent thermo- mechanical properties. The quality of the fabricated composite by the CVI process depends upon the employed precursor, gas-phase decomposition, and heterogeneous surface reactions, which in turn are affected by the operating conditions. In this study, a PFR-based computational strategy is utilized to examine the effects of operating conditions on the homogeneous gas-phase decomposition process while using MTS as a precursor with H$_2$ as the carrier gas in a hot-wall cylindrical reactor at CVI-relevant conditions.
 
 The decomposition of MTS leads to the production of several byproducts and intermediate reactive species, which, if not predicted well, can lead to inaccurate results for the subsequent heterogeneous reactions and the associated SiC deposition. Therefore, we considered three chemical mechanisms with varying degree of fidelity, namely, a detailed mechanisms (M1: 103 steps and 42 species), a moderately complex reduced mechanism (M2: 30 steps and 20 species), and a globally reduced mechanism (M3: 1 step and 5 species) to demonstrate that certain number of steps and species are needed to get accurate concentrations of the species. While M1 and M3 mechanisms were considered from past studies, the M2 mechanism was derived from M1 by using a reduction strategy, which ensured that it included the dominant reactions and their sensitivity to key species for the range of operating conditions considered in this study. Compared to the detailed M1 mechanism, the computational cost of a PFR simulation by the M2 and M3 mechanisms was found to be 44.2\% and 26\%, respectively.
